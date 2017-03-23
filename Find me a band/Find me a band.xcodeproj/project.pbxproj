@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D4DDA20491A528AAAA89FF8 /* Pods_Find_me_a_band.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DD60C138DB5AF1AE2ACD0F /* Pods_Find_me_a_band.framework */; };
 		9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67F3F01E8414DB00342A86 /* AppDelegate.swift */; };
 		9C67F3F31E8414DB00342A86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67F3F21E8414DB00342A86 /* ViewController.swift */; };
 		9C67F3F61E8414DB00342A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F41E8414DB00342A86 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37DD60C138DB5AF1AE2ACD0F /* Pods_Find_me_a_band.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_me_a_band.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C66F609CA02C0D8CE175F82 /* Pods-Find me a band.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find me a band.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find me a band/Pods-Find me a band.debug.xcconfig"; sourceTree = "<group>"; };
+		9057F16744CF6017D76E31F6 /* Pods-Find me a band.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find me a band.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find me a band/Pods-Find me a band.release.xcconfig"; sourceTree = "<group>"; };
 		9C67F3ED1E8414DB00342A86 /* Find me a band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find me a band.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C67F3F01E8414DB00342A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C67F3F21E8414DB00342A86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D4DDA20491A528AAAA89FF8 /* Pods_Find_me_a_band.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090D4B40681E5BEF2A583BF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C66F609CA02C0D8CE175F82 /* Pods-Find me a band.debug.xcconfig */,
+				9057F16744CF6017D76E31F6 /* Pods-Find me a band.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9C67F3E41E8414DB00342A86 = {
 			isa = PBXGroup;
 			children = (
 				9C67F3EF1E8414DB00342A86 /* Find me a band */,
 				9C67F3EE1E8414DB00342A86 /* Products */,
+				090D4B40681E5BEF2A583BF6 /* Pods */,
+				B1FEBB2EC23D74D11A2C1F82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = "Find me a band";
 			sourceTree = "<group>";
 		};
+		B1FEBB2EC23D74D11A2C1F82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37DD60C138DB5AF1AE2ACD0F /* Pods_Find_me_a_band.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C67F3FF1E8414DB00342A86 /* Build configuration list for PBXNativeTarget "Find me a band" */;
 			buildPhases = (
+				BCA3369D2CAE8F6115B9B8DD /* [CP] Check Pods Manifest.lock */,
 				9C67F3E91E8414DB00342A86 /* Sources */,
 				9C67F3EA1E8414DB00342A86 /* Frameworks */,
 				9C67F3EB1E8414DB00342A86 /* Resources */,
+				9A1C379D4033E8E917B2B05A /* [CP] Embed Pods Frameworks */,
+				A0A985E3DDE5F8C62CDA2531 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9A1C379D4033E8E917B2B05A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Find me a band/Pods-Find me a band-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0A985E3DDE5F8C62CDA2531 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Find me a band/Pods-Find me a band-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCA3369D2CAE8F6115B9B8DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C67F3E91E8414DB00342A86 /* Sources */ = {
@@ -258,6 +333,7 @@
 		};
 		9C67F4001E8414DB00342A86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C66F609CA02C0D8CE175F82 /* Pods-Find me a band.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Find me a band/Info.plist";
@@ -270,6 +346,7 @@
 		};
 		9C67F4011E8414DB00342A86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9057F16744CF6017D76E31F6 /* Pods-Find me a band.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Find me a band/Info.plist";
