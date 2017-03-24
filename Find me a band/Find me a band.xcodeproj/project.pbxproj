@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D4DDA20491A528AAAA89FF8 /* Pods_Find_me_a_band.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DD60C138DB5AF1AE2ACD0F /* Pods_Find_me_a_band.framework */; };
+		9C51D5121E85428D002A94EC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51D5111E85428D002A94EC /* SignInViewController.swift */; };
+		9C51D5141E8542B3002A94EC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51D5131E8542B3002A94EC /* SignUpViewController.swift */; };
 		9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67F3F01E8414DB00342A86 /* AppDelegate.swift */; };
 		9C67F3F61E8414DB00342A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F41E8414DB00342A86 /* Main.storyboard */; };
 		9C67F3F81E8414DB00342A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F71E8414DB00342A86 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 		37DD60C138DB5AF1AE2ACD0F /* Pods_Find_me_a_band.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_me_a_band.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C66F609CA02C0D8CE175F82 /* Pods-Find me a band.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find me a band.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find me a band/Pods-Find me a band.debug.xcconfig"; sourceTree = "<group>"; };
 		9057F16744CF6017D76E31F6 /* Pods-Find me a band.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find me a band.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find me a band/Pods-Find me a band.release.xcconfig"; sourceTree = "<group>"; };
+		9C51D5111E85428D002A94EC /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
+		9C51D5131E8542B3002A94EC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
 		9C67F3ED1E8414DB00342A86 /* Find me a band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find me a band.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C67F3F01E8414DB00342A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C67F3F51E8414DB00342A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */,
+				9C51D5111E85428D002A94EC /* SignInViewController.swift */,
+				9C51D5131E8542B3002A94EC /* SignUpViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -254,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C51D5121E85428D002A94EC /* SignInViewController.swift in Sources */,
 				9C9929FE1E84376E00342D2B /* BandsTableViewController.swift in Sources */,
 				9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */,
 				9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */,
+				9C51D5141E8542B3002A94EC /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
