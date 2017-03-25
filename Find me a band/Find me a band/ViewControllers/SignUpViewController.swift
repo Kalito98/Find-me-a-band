@@ -21,7 +21,25 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func loadHome(_ sender: UIButton) {
+        let storyboardName: String = "Main"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let viewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
+        present(viewController!, animated: true, completion: { _ in})
+    }
 
+    @IBAction func loadSignIn(_ sender: UIButton) {
+        let storyboardName: String = "Main"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let viewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signInView")
+        present(viewController!, animated: true, completion: { _ in})
+    }
+    
+    @IBAction func signUp(_ sender: UIButton) {
+        //sign up
+    }
+    
+    
     /*
     // MARK: - Navigation
 

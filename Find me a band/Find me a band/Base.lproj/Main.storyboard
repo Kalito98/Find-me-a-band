@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WqX-u9-dzP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ili-1h-BMD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,7 +31,7 @@
         <!--Bands-->
         <scene sceneID="0k3-se-t30">
             <objects>
-                <tableViewController id="spb-IX-ps7" customClass="BandsTableViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="bandsTableView" id="spb-IX-ps7" customClass="BandsTableViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uzS-ke-FbR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="rDb-0j-JFr">
             <objects>
-                <viewController id="17G-ct-AXY" customClass="SignInViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signInView" id="17G-ct-AXY" customClass="SignInViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5NO-29-yu7"/>
                         <viewControllerLayoutGuide type="bottom" id="7Jb-9O-Iyi"/>
@@ -127,11 +127,17 @@
                                 <rect key="frame" x="16" y="293" width="94" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SIgn In"/>
+                                <connections>
+                                    <action selector="SignIn:" destination="17G-ct-AXY" eventType="touchUpInside" id="3iC-PK-isy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l40-x8-6xb">
                                 <rect key="frame" x="255" y="294" width="104" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="loadHome:" destination="17G-ct-AXY" eventType="touchUpInside" id="j2F-DA-5qY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRC-mV-ayu">
                                 <rect key="frame" x="16" y="379" width="343" height="21"/>
@@ -144,6 +150,9 @@
                                 <rect key="frame" x="160" y="408" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="loadSignUp:" destination="17G-ct-AXY" eventType="touchUpInside" id="TxF-yR-3Dl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,7 +165,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="MDM-ix-R5d">
             <objects>
-                <viewController id="ili-1h-BMD" customClass="SignUpViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpView" id="ili-1h-BMD" customClass="SignUpViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nwW-sf-74S"/>
                         <viewControllerLayoutGuide type="bottom" id="23l-nQ-FHB"/>
@@ -204,6 +213,9 @@
                                 <rect key="frame" x="255" y="361" width="104" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="loadHome:" destination="ili-1h-BMD" eventType="touchUpInside" id="3hH-bL-71D"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQS-Il-eOS">
                                 <rect key="frame" x="16" y="267" width="343" height="21"/>
@@ -223,6 +235,9 @@
                                 <rect key="frame" x="16" y="360" width="94" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SIgn up"/>
+                                <connections>
+                                    <action selector="signUp:" destination="ili-1h-BMD" eventType="touchUpInside" id="0Bc-yN-oS7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYt-XH-uID">
                                 <rect key="frame" x="16" y="437" width="343" height="21"/>
@@ -235,6 +250,9 @@
                                 <rect key="frame" x="164" y="466" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="loadSignIn:" destination="ili-1h-BMD" eventType="touchUpInside" id="kAn-wl-ai3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -247,7 +265,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="F8N-8X-E78">
             <objects>
-                <tabBarController id="WqX-u9-dzP" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" id="WqX-u9-dzP" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="hmO-tO-9yM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -261,7 +279,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhx-pk-pCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399" y="81"/>
+            <point key="canvasLocation" x="396" y="83"/>
         </scene>
     </scenes>
 </document>

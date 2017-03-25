@@ -22,6 +22,23 @@ class SignInViewController: UIViewController {
     }
     
 
+    @IBAction func loadHome(_ sender: UIButton) {
+        let storyboardName: String = "Main"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let viewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
+        present(viewController!, animated: true, completion: { _ in})    }
+    
+    @IBAction func loadSignUp(_ sender: UIButton) {
+        let storyboardName: String = "Main"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let viewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signUpView")
+        present(viewController!, animated: true, completion: { _ in})
+    }
+    
+    @IBAction func SignIn(_ sender: UIButton) {
+        //sign In
+    }
+    
     /*
     // MARK: - Navigation
 
