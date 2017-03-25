@@ -14,6 +14,7 @@
 		9C67F3F61E8414DB00342A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F41E8414DB00342A86 /* Main.storyboard */; };
 		9C67F3F81E8414DB00342A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F71E8414DB00342A86 /* Assets.xcassets */; };
 		9C67F3FB1E8414DB00342A86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F91E8414DB00342A86 /* LaunchScreen.storyboard */; };
+		9C73FEAB1E86B02400A2ED2B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73FEAA1E86B02400A2ED2B /* AccountViewController.swift */; };
 		9C9929FE1E84376E00342D2B /* BandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */; };
 		9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C992A031E8438E300342D2B /* HttpRequester.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		9C67F3F71E8414DB00342A86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C67F3FA1E8414DB00342A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C67F3FC1E8414DB00342A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C73FEAA1E86B02400A2ED2B /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = ViewControllers/AccountViewController.swift; sourceTree = "<group>"; };
 		9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsTableViewController.swift; path = ViewControllers/BandsTableViewController.swift; sourceTree = "<group>"; };
 		9C992A031E8438E300342D2B /* HttpRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequester.swift; path = Utils/HttpRequester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 				9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */,
 				9C51D5111E85428D002A94EC /* SignInViewController.swift */,
 				9C51D5131E8542B3002A94EC /* SignUpViewController.swift */,
+				9C73FEAA1E86B02400A2ED2B /* AccountViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				9C51D5121E85428D002A94EC /* SignInViewController.swift in Sources */,
 				9C9929FE1E84376E00342D2B /* BandsTableViewController.swift in Sources */,
+				9C73FEAB1E86B02400A2ED2B /* AccountViewController.swift in Sources */,
 				9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */,
 				9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */,
 				9C51D5141E8542B3002A94EC /* SignUpViewController.swift in Sources */,
