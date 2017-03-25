@@ -8,11 +8,11 @@
 
 import UIKit
 
-class BandsTableViewController: UITableViewController {
+class BandsTableViewController: UITableViewController, UITabBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarController!.tabBar.items![1].
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,7 +41,7 @@ class BandsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+        // Configureadd  the cell...
 
         return cell
     }
@@ -91,5 +91,6 @@ class BandsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

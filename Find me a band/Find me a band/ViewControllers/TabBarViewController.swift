@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TabBarViewController: UITabBarController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,33 @@ class TabBarViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if(item.tag == 0) {
+            //bands tab
+        } else if(item.tag == 1) {
+            //needs to be made with user session
+            let userSession = false
+            if (userSession) {
+            } else {
+                let storyboardName: String = "Main"
+                let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+                let viewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signInView")
+                present(viewController!, animated: true, completion: { _ in})
+            }
+
+        } else if(item.tag == 2) {
+            //needs to be made with user session
+            let userSession = false
+            if (userSession) {
+            } else {
+                let storyboardName: String = "Main"
+                let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+                let viewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signInView")
+                present(viewController!, animated: true, completion: { _ in})
+            }
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

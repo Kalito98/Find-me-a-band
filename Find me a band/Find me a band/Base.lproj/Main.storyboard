@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Band" id="1y2-g8-h3z"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Add Band" id="1y2-g8-h3z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6F-2a-I8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,13 +68,22 @@
                     <view key="view" contentMode="scaleToFill" id="t6n-vK-VZ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Work PLS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNR-sh-6L5">
+                                <rect key="frame" x="71" y="59" width="288" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" id="lgP-2D-xcQ"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Account" id="lgP-2D-xcQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5E-Xm-nTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="-643"/>
+            <point key="canvasLocation" x="1944.8" y="-643.62818590704649"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="rDb-0j-JFr">
@@ -262,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="3589.5999999999999" y="-643.62818590704649"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="F8N-8X-E78">
             <objects>
-                <tabBarController storyboardIdentifier="mainTabBarController" id="WqX-u9-dzP" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" id="WqX-u9-dzP" customClass="TabBarViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="hmO-tO-9yM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
