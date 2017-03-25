@@ -55,6 +55,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9C51D5151E8546DC002A94EC /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DI;
+			sourceTree = "<group>";
+		};
 		9C67F3E41E8414DB00342A86 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +83,7 @@
 		9C67F3EF1E8414DB00342A86 /* Find me a band */ = {
 			isa = PBXGroup;
 			children = (
+				9C51D5151E8546DC002A94EC /* DI */,
 				9C992A021E84385E00342D2B /* Providers */,
 				9C992A011E84385200342D2B /* Data */,
 				9C992A001E84382D00342D2B /* Utils */,
