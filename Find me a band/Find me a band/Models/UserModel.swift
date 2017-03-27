@@ -16,8 +16,6 @@ struct UserModel: Decodable {
     let email: String?
     let authtoken: String?
     
-    // MARK: - Deserialization
-    
     init?(json: JSON) {
         self.userId = "id" <~~ json
         self.username = "username" <~~ json

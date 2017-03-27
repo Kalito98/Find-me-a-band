@@ -19,6 +19,7 @@
 		9C7BDF251E86E0B7004421A2 /* AddBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7BDF241E86E0B7004421A2 /* AddBandViewController.swift */; };
 		9C9929FE1E84376E00342D2B /* BandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */; };
 		9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C992A031E8438E300342D2B /* HttpRequester.swift */; };
+		9C9F8B901E89984900BB5993 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F8B8F1E89984900BB5993 /* HttpMethod.swift */; };
 		9CEDB52A1E89286900593363 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDB5291E89286900593363 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		9C7BDF241E86E0B7004421A2 /* AddBandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBandViewController.swift; path = ViewControllers/AddBandViewController.swift; sourceTree = "<group>"; };
 		9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsTableViewController.swift; path = ViewControllers/BandsTableViewController.swift; sourceTree = "<group>"; };
 		9C992A031E8438E300342D2B /* HttpRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequester.swift; path = Utils/HttpRequester.swift; sourceTree = "<group>"; };
+		9C9F8B8F1E89984900BB5993 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpMethod.swift; path = Enums/HttpMethod.swift; sourceTree = "<group>"; };
 		9CEDB5291E89286900593363 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Models/UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 		9C67F3EF1E8414DB00342A86 /* Find me a band */ = {
 			isa = PBXGroup;
 			children = (
+				9C9F8B8E1E89982800BB5993 /* Enums */,
 				9C51D5151E8546DC002A94EC /* DI */,
 				9C992A021E84385E00342D2B /* Providers */,
 				9C992A011E84385200342D2B /* Data */,
@@ -147,6 +150,14 @@
 			children = (
 			);
 			name = Providers;
+			sourceTree = "<group>";
+		};
+		9C9F8B8E1E89982800BB5993 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				9C9F8B8F1E89984900BB5993 /* HttpMethod.swift */,
+			);
+			name = Enums;
 			sourceTree = "<group>";
 		};
 		B1FEBB2EC23D74D11A2C1F82 /* Frameworks */ = {
@@ -282,6 +293,7 @@
 			files = (
 				9C51D5121E85428D002A94EC /* SignInViewController.swift in Sources */,
 				9C9929FE1E84376E00342D2B /* BandsTableViewController.swift in Sources */,
+				9C9F8B901E89984900BB5993 /* HttpMethod.swift in Sources */,
 				9C73FEAB1E86B02400A2ED2B /* AccountViewController.swift in Sources */,
 				9C7BDF251E86E0B7004421A2 /* AddBandViewController.swift in Sources */,
 				9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */,
