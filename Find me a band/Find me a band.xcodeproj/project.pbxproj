@@ -19,6 +19,7 @@
 		9C7BDF251E86E0B7004421A2 /* AddBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7BDF241E86E0B7004421A2 /* AddBandViewController.swift */; };
 		9C9929FE1E84376E00342D2B /* BandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */; };
 		9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C992A031E8438E300342D2B /* HttpRequester.swift */; };
+		9CEDB52A1E89286900593363 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDB5291E89286900593363 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9C7BDF241E86E0B7004421A2 /* AddBandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBandViewController.swift; path = ViewControllers/AddBandViewController.swift; sourceTree = "<group>"; };
 		9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsTableViewController.swift; path = ViewControllers/BandsTableViewController.swift; sourceTree = "<group>"; };
 		9C992A031E8438E300342D2B /* HttpRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequester.swift; path = Utils/HttpRequester.swift; sourceTree = "<group>"; };
+		9CEDB5291E89286900593363 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Models/UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		9C9929FF1E84382100342D2B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9CEDB5291E89286900593363 /* UserModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */,
 				9C7BDF231E86BF65004421A2 /* TabBarViewController.swift in Sources */,
 				9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */,
+				9CEDB52A1E89286900593363 /* UserModel.swift in Sources */,
 				9C51D5141E8542B3002A94EC /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,6 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController = UITabBarController()
         tabBarUnauthorized()
         
+        //crap and testing
+        
+        let userJson = [
+            "id" : "5456481",
+            "username": "hkellaway",
+            "email": "test@abv.bg",
+            "authtoken": "chernamagiq"
+        ]
+        
+        if let user = UserModel(json: userJson) {
+            print(user.email ?? "Test Email")
+            print(user.username ?? "Test Username")
+        }
+        
+        //crap and testing
+        
         return true
     }
 
