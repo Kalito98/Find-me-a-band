@@ -20,6 +20,7 @@
 		9C9929FE1E84376E00342D2B /* BandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */; };
 		9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C992A031E8438E300342D2B /* HttpRequester.swift */; };
 		9C9F8B901E89984900BB5993 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F8B8F1E89984900BB5993 /* HttpMethod.swift */; };
+		9C9F8B931E89997E00BB5993 /* HttpRequesterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F8B921E89997E00BB5993 /* HttpRequesterDelegate.swift */; };
 		9CEDB52A1E89286900593363 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDB5291E89286900593363 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsTableViewController.swift; path = ViewControllers/BandsTableViewController.swift; sourceTree = "<group>"; };
 		9C992A031E8438E300342D2B /* HttpRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequester.swift; path = Utils/HttpRequester.swift; sourceTree = "<group>"; };
 		9C9F8B8F1E89984900BB5993 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpMethod.swift; path = Enums/HttpMethod.swift; sourceTree = "<group>"; };
+		9C9F8B921E89997E00BB5993 /* HttpRequesterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequesterDelegate.swift; path = Utils/HttpRequesterDelegate.swift; sourceTree = "<group>"; };
 		9CEDB5291E89286900593363 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Models/UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +135,7 @@
 		9C992A001E84382D00342D2B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9C992A031E8438E300342D2B /* HttpRequester.swift */,
+				9C9F8B911E89995100BB5993 /* Http */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -158,6 +160,15 @@
 				9C9F8B8F1E89984900BB5993 /* HttpMethod.swift */,
 			);
 			name = Enums;
+			sourceTree = "<group>";
+		};
+		9C9F8B911E89995100BB5993 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				9C992A031E8438E300342D2B /* HttpRequester.swift */,
+				9C9F8B921E89997E00BB5993 /* HttpRequesterDelegate.swift */,
+			);
+			name = Http;
 			sourceTree = "<group>";
 		};
 		B1FEBB2EC23D74D11A2C1F82 /* Frameworks */ = {
@@ -301,6 +312,7 @@
 				9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */,
 				9CEDB52A1E89286900593363 /* UserModel.swift in Sources */,
 				9C51D5141E8542B3002A94EC /* SignUpViewController.swift in Sources */,
+				9C9F8B931E89997E00BB5993 /* HttpRequesterDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
