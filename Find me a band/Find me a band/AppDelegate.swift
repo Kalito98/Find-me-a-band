@@ -29,10 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "authtoken": "chernamagiq"
         ]
         
-        if let user = UserModel(json: userJson) {
-            print(user.email ?? "Test Email")
-            print(user.username ?? "Test Username")
-        }
+        let user = UserModel(json: userJson)
+            print(user?.email ?? "Test Email")
+            print(user?.username ?? "Test Username")
+        
+        let dafuq = user?.toJSON()
+        print(dafuq)
         
         //crap and testing
         
