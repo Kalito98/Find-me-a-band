@@ -12,7 +12,6 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController!.tabBar.items![1].
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

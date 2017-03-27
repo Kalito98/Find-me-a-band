@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ili-1h-BMD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="spb-IX-ps7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Add Band-->
         <scene sceneID="2un-hN-T9K">
             <objects>
-                <viewController id="zin-ix-Ht4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addBandView" id="zin-ix-Ht4" customClass="AddBandViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Y9-Ur-N3w"/>
                         <viewControllerLayoutGuide type="bottom" id="b1W-I0-dWA"/>
@@ -22,7 +22,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Add Band" id="1y2-g8-h3z"/>
+                    <tabBarItem key="tabBarItem" title="Add Band" id="VMd-PV-LYL"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6F-2a-I8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +52,8 @@
                             <outlet property="delegate" destination="spb-IX-ps7" id="87r-Wf-37L"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Bands" id="seg-Yx-vnt"/>
+                    <tabBarItem key="tabBarItem" title="Bands" id="Woz-hM-PR8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVl-Mk-4gF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,7 +62,7 @@
         <!--Account-->
         <scene sceneID="FzE-iN-2CZ">
             <objects>
-                <viewController id="3Xi-I7-tVD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountView" id="3Xi-I7-tVD" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ewb-r1-BqR"/>
                         <viewControllerLayoutGuide type="bottom" id="mQN-DW-FqB"/>
@@ -79,13 +81,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Account" id="lgP-2D-xcQ"/>
+                    <tabBarItem key="tabBarItem" title="Account" id="Cgk-IM-EPp"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5E-Xm-nTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1944.8" y="-643.62818590704649"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--Sign In-->
         <scene sceneID="rDb-0j-JFr">
             <objects>
                 <viewController storyboardIdentifier="signInView" id="17G-ct-AXY" customClass="SignInViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,38 +143,17 @@
                                     <action selector="SignIn:" destination="17G-ct-AXY" eventType="touchUpInside" id="3iC-PK-isy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l40-x8-6xb">
-                                <rect key="frame" x="255" y="294" width="104" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Home"/>
-                                <connections>
-                                    <action selector="loadHome:" destination="17G-ct-AXY" eventType="touchUpInside" id="j2F-DA-5qY"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRC-mV-ayu">
-                                <rect key="frame" x="16" y="379" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8q-oy-aud">
-                                <rect key="frame" x="160" y="408" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <action selector="loadSignUp:" destination="17G-ct-AXY" eventType="touchUpInside" id="TxF-yR-3Dl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Sign In" id="cOD-MD-iVe"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wm7-hK-Ldj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2876" y="-643.62818590704649"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign Up-->
         <scene sceneID="MDM-ix-R5d">
             <objects>
                 <viewController storyboardIdentifier="signUpView" id="ili-1h-BMD" customClass="SignUpViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
@@ -218,14 +200,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azw-8b-APM">
-                                <rect key="frame" x="255" y="361" width="104" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Home"/>
-                                <connections>
-                                    <action selector="loadHome:" destination="ili-1h-BMD" eventType="touchUpInside" id="3hH-bL-71D"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQS-Il-eOS">
                                 <rect key="frame" x="16" y="267" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -248,47 +222,15 @@
                                     <action selector="signUp:" destination="ili-1h-BMD" eventType="touchUpInside" id="0Bc-yN-oS7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYt-XH-uID">
-                                <rect key="frame" x="16" y="437" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KU4-sH-qzq">
-                                <rect key="frame" x="164" y="466" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign In"/>
-                                <connections>
-                                    <action selector="loadSignIn:" destination="ili-1h-BMD" eventType="touchUpInside" id="kAn-wl-ai3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Sign Up" id="yah-od-NjP"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgw-by-R9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3589.5999999999999" y="-643.62818590704649"/>
-        </scene>
-        <!--Tab Bar View Controller-->
-        <scene sceneID="F8N-8X-E78">
-            <objects>
-                <tabBarController storyboardIdentifier="mainTabBarController" id="WqX-u9-dzP" customClass="TabBarViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="hmO-tO-9yM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="spb-IX-ps7" kind="relationship" relationship="viewControllers" id="gsz-UQ-5CN"/>
-                        <segue destination="zin-ix-Ht4" kind="relationship" relationship="viewControllers" id="UJw-j9-ydP"/>
-                        <segue destination="3Xi-I7-tVD" kind="relationship" relationship="viewControllers" id="9VW-vV-FFR"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fhx-pk-pCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="396" y="83"/>
         </scene>
     </scenes>
 </document>

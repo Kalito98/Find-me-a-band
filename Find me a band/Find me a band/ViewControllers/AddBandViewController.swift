@@ -1,14 +1,14 @@
 //
-//  SignUpViewController.swift
+//  AddBandViewController.swift
 //  Find me a band
 //
-//  Created by Kaloyan Yanev on 3/24/17.
+//  Created by Kaloyan Yanev on 3/25/17.
 //  Copyright © 2017 Kaloyan Yanev. All rights reserved.
 //
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class AddBandViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +20,8 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
-    
-    @IBAction func signUp(_ sender: UIButton) {
-        //sign up
-    }
-    
-    
     /*
     // MARK: - Navigation
 

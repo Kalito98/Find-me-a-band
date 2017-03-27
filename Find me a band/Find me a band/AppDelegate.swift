@@ -12,10 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var tabBarController: UITabBarController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        tabBarController = UITabBarController()
+        tabBarUnauthorized()
+        
         return true
     }
 
@@ -39,6 +43,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func tabBarAuthorized() {
+        let storyboardName: String = "Main"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        
+        let bandsTablleViewController: UIViewController? =  storyboard.instantiateViewController(withIdentifier: "bandsTableView")
+        let addBandViewController: UIViewController? =  storyboard.instantiateViewController(withIdentifier: "addBandView")
+        let accountViewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "accountView")
+        
+        tabBarController?.viewControllers = [bandsTablleViewController!, addBandViewController!, accountViewController!]
+        
+        window?.rootViewController = tabBarController
+    }
+    
+    func tabBarUnauthorized() {
+        let storyboardName: String = "Main"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        
+        let bandsTablleViewController: UIViewController? =  storyboard.instantiateViewController(withIdentifier: "bandsTableView")
+        let signUpViewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signUpView")
+        let signInViewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signInView")
+        
+        tabBarController?.viewControllers = [bandsTablleViewController!, signInViewController!, signUpViewController!]
+        
+        window?.rootViewController = tabBarController
     }
 
 
