@@ -8,8 +8,26 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
-
+class SignUpViewController: UIViewController, HttpRequesterDelegate {
+    
+    @IBOutlet weak var textFieldUserName: UITextField!
+    @IBOutlet weak var textFieldEmail: UITextField!
+    @IBOutlet weak var textFieldPass: UITextField!
+    
+    
+    var url: String {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return "\(appDelegate.baseUrl)"
+        }
+    }
+    var http: HttpRequester? {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.http
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +41,17 @@ class SignUpViewController: UIViewController {
 
     
     @IBAction func signUp(_ sender: UIButton) {
-        //sign up
+        let username = textFieldUserName.text
+        let password = textFieldPass.text
+        
+        
+        let userJson = [
+        "username": username,
+        "passHash": password
+        ]
+        
+        self.http?.delegate = self
+        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: userJson)
     }
     
     

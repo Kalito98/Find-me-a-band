@@ -148,6 +148,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Sign In" id="cOD-MD-iVe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textFieldPassword" destination="Duw-J1-7PH" id="CUb-g0-E5b"/>
+                        <outlet property="textFieldUserName" destination="hKD-Wv-Mhw" id="dsH-Wm-wL9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wm7-hK-Ldj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -227,6 +231,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Sign Up" id="yah-od-NjP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textFieldEmail" destination="uz8-nY-mTG" id="Q36-Wg-kQa"/>
+                        <outlet property="textFieldPass" destination="gjO-kH-HjO" id="K12-oq-6aU"/>
+                        <outlet property="textFieldUserName" destination="7rZ-JM-tm1" id="aiK-Mk-YOC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgw-by-R9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
