@@ -8,10 +8,25 @@
 
 import UIKit
 
-class BandsTableViewController: UITableViewController, UITabBarDelegate {
-
+class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpRequesterDelegate {
+    
+    var url: String {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return "\(appDelegate.baseUrl)"
+        }
+    }
+    var http: HttpRequester? {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.http
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        test()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -21,7 +36,7 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be	 recreated.
     }
 
     // MARK: - Table view data source
@@ -34,6 +49,25 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+    
+    func didReceiveData(data: Any) {
+        let dataArray = data as! [Dictionary<String, Any>]
+    }
+    
+    func test() {
+        let userJson = [
+            "username": "hkellaway",
+            "passHash": "kurec"
+        ]
+        
+        let user = UserModel(json: userJson)
+        
+        let dafuq = user?.toJSON()
+        print(dafuq)
+        
+        self.http?.delegate = self
+        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: dafuq)
     }
 
     /*

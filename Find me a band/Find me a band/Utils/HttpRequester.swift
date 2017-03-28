@@ -11,57 +11,70 @@ import Foundation
 class HttpRequester {
     var delegate: HttpRequesterDelegate?
     
-    func sendRequest(withMethod method: HttpMethod, toUrl urlString: String, withBody body: Any? = nil, andHeaders headers: Dictionary<String, String> = [:] ) {
+    func send(withMethod method: HttpMethod,
+              toUrl urlString: String,
+              withBody bodyDict: Any? = nil,
+              andHeaders headers: Dictionary<String, String> = [:]) {
         let url = URL(string: urlString)
         
         var request = URLRequest(url: url!)
         request.httpMethod = method.rawValue
         
-        if(body != nil) {
-            request.httpBody = body as! Data?
+        if(bodyDict != nil) {
+            do {
+                let body = try JSONSerialization.data(withJSONObject: bodyDict!, options: .prettyPrinted)
+                request.httpBody = body
+            } catch {
+            }
         }
+
         
-        headers.forEach() { request.setValue($0.value, forHTTPHeaderField: $0.key)}
+        headers.forEach() { request.setValue($0.value, forHTTPHeaderField: $0.key) }
         
         weak var weakSelf = self
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler:
             { bodyData, response, error in
                 do {
-                    let bodyRecived = try JSONSerialization.jsonObject(with: bodyData!, options: .allowFragments)
+                    let body = try JSONSerialization.jsonObject(with: bodyData!, options: .allowFragments)
                     
                     if((response as! HTTPURLResponse).statusCode >= 400) {
                         let message = (body as! Dictionary<String, Any>)["error"] as! String
-                        //needs error handling
+                        weakSelf?.delegate?.didReceiveError(error: .api(message))
                         return
                     }
                     
                     switch(method) {
-                    case .get:
-                        weakSelf?.delegate?.didReciveData(data: bodyRecived)
-                    case .post:
-                        weakSelf?.delegate?.didReciveData(data: bodyRecived)
-                    default: break
-
+                    case .delete:
+                        weakSelf?.delegate?.didDeleteData()
+                    default:
+                        weakSelf?.delegate?.didReciveData(data: body)
                     }
                 }
                 catch {
-                    
+                    weakSelf?.delegate?.didReceiveError(error: .api(error.localizedDescription))
                 }
-            
         })
         
         dataTask.resume()
     }
     
-    func post(toUrl urlString: String, withBody body: Any?, andHeaders headers: Dictionary<String, String> = [:]){
-        self.sendRequest(withMethod: .post, toUrl: urlString, withBody: body, andHeaders: headers)
+    func get(fromUrl urlString: String, andHeaders headers: Dictionary<String, String> = [:]){
+        self.send(withMethod: .get, toUrl: urlString,withBody: nil, andHeaders: headers)
     }
     
-    func postJson(toUrl urlString: String, withBody body: Any?, andHeaders headers: Dictionary<String, String> = [:]){
+    func post(toUrl urlString: String, withBody bodyDict: Any?, andHeaders headers: Dictionary<String, String> = [:]){
+        self.send(withMethod: .post, toUrl: urlString, withBody: bodyDict, andHeaders: headers)
+    }
+    
+    func delete(atUrl urlString: String, withHeaders headers: Dictionary<String, String> = [:]) {
+        self.send(withMethod: .delete, toUrl: urlString, andHeaders: headers)
+    }
+    
+    func postJson(toUrl urlString: String, withBody bodyDict: Any?, andHeaders headers: Dictionary<String, String> = [:]){
         var headersWithJson: Dictionary<String,String>= [:]
         headers.forEach(){ headersWithJson[$0.key] = $0.value }
         headersWithJson["Content-Type"] = "application/json"
-        self.post(toUrl: urlString, withBody: body, andHeaders: headersWithJson)
+        self.post(toUrl: urlString, withBody: bodyDict, andHeaders: headersWithJson)
     }
 }

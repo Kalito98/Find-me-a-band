@@ -9,34 +9,35 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
 
     var window: UIWindow?
     var tabBarController: UITabBarController?
+    var baseUrl: String = "http://192.168.1.249:8080/auth/register"
+    var http: HttpRequester?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         tabBarController = UITabBarController()
         tabBarUnauthorized()
+        self.http = HttpRequester()
         
         //crap and testing
         
         let userJson = [
-            "id" : "5456481",
-            "username": "hkellaway",
-            "email": "test@abv.bg",
-            "authtoken": "chernamagiq"
+            "name": "hkellaway",
+            "passHash": "choveko"
         ]
         
         let user = UserModel(json: userJson)
-            print(user?.email ?? "Test Email")
-            print(user?.username ?? "Test Username")
         
         let dafuq = user?.toJSON()
         print(dafuq)
         
+        
         //crap and testing
+        test()
         
         return true
     }
@@ -87,6 +88,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController?.viewControllers = [bandsTablleViewController!, signInViewController!, signUpViewController!]
         
         window?.rootViewController = tabBarController
+    }
+    
+    func test() {
+        let userJson = [
+            "username": "hkellaway",
+            "passHash": "trugni"
+        ]
+        
+        let user = UserModel(json: userJson)
+        
+        let dafuq = user?.toJSON()
+        print(dafuq)
+        
+        self.http?.delegate = self
+        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: dafuq)
     }
 
 
