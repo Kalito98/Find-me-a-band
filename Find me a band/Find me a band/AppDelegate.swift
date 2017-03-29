@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         tabBarController = UITabBarController()
-        tabBarUnauthorized()
+        tabBarAuthorized()
         self.http = HttpRequester()
         
         //crap and testing
