@@ -42,16 +42,25 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
     
     @IBAction func signUp(_ sender: UIButton) {
         let username = textFieldUserName.text
+        let email = textFieldEmail.text
         let password = textFieldPass.text
         
         
         let userJson = [
         "username": username,
-        "passHash": password
+        "passHash": password,
+        "email": email
         ]
         
         self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: userJson)
+        self.http?.postJson(toUrl: "http://192.168.196.182:8080/auth/register", withBody: userJson)
+    }
+    
+    func didReciveData(data: Any) {
+        print(data)
+        let userData = data as! Dictionary<String, Any>
+        let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
+        print(user)
     }
     
     

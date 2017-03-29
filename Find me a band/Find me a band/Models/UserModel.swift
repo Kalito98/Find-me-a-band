@@ -11,13 +11,13 @@ import Gloss
 
 struct UserModel: Decodable {
     
-    let userId: Int?
+    let userId: String?
     let username: String?
     let email: String?
     let passHash: String?
     
     init?(json: JSON) {
-        self.userId = "id" <~~ json
+        self.userId = "_id" <~~ json
         self.username = "username" <~~ json
         self.email = "email" <~~ json
         self.passHash = "passHash" <~~ json
@@ -25,7 +25,7 @@ struct UserModel: Decodable {
     
     func toJSON() -> JSON? {
         return jsonify([
-            "id" ~~> self.userId,
+            "_id" ~~> self.userId,
             "username" ~~> self.username,
             "email" ~~> self.email,
             "passHash" ~~> self.passHash

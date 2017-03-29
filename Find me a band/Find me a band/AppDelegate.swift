@@ -25,19 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
         
         //crap and testing
         
-        let userJson = [
-            "name": "hkellaway",
-            "passHash": "choveko"
-        ]
-        
-        let user = UserModel(json: userJson)
-        
-        let dafuq = user?.toJSON()
-        print(dafuq)
-        
-        
         //crap and testing
-        test()
         
         return true
     }
@@ -88,21 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
         tabBarController?.viewControllers = [bandsTablleViewController!, signInViewController!, signUpViewController!]
         
         window?.rootViewController = tabBarController
-    }
-    
-    func test() {
-        let userJson = [
-            "username": "hkellaway",
-            "passHash": "trugni"
-        ]
-        
-        let user = UserModel(json: userJson)
-        
-        let dafuq = user?.toJSON()
-        print(dafuq)
-        
-        self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: dafuq)
     }
 
 

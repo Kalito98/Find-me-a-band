@@ -44,7 +44,7 @@ class HttpRequester {
                         return
                     }
                     
-                    switch(method) {
+                    switch(	method) {
                     case .delete:
                         weakSelf?.delegate?.didDeleteData()
                     default:

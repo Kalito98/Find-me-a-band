@@ -25,8 +25,6 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        test()
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -55,20 +53,6 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
         let dataArray = data as! [Dictionary<String, Any>]
     }
     
-    func test() {
-        let userJson = [
-            "username": "hkellaway",
-            "passHash": "kurec"
-        ]
-        
-        let user = UserModel(json: userJson)
-        
-        let dafuq = user?.toJSON()
-        print(dafuq)
-        
-        self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: dafuq)
-    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
