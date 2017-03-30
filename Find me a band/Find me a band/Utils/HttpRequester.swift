@@ -60,7 +60,7 @@ class HttpRequester {
     }
     
     func get(fromUrl urlString: String, andHeaders headers: Dictionary<String, String> = [:]){
-        self.send(withMethod: .get, toUrl: urlString,withBody: nil, andHeaders: headers)
+        self.send(withMethod: .get, toUrl: urlString, withBody: nil, andHeaders: headers)
     }
     
     func post(toUrl urlString: String, withBody bodyDict: Any?, andHeaders headers: Dictionary<String, String> = [:]){
