@@ -53,7 +53,7 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
         ]
         
         self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.196.182:8080/auth/register", withBody: userJson)
+        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: userJson)
     }
     
     func didReciveData(data: Any) {

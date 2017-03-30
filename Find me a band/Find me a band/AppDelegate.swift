@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
         self.http = HttpRequester()
         
         tabBarController = UITabBarController()
-        tabBarAuthorized()
+        tabBarUnauthorized()
 
         
         //crap and testing

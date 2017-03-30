@@ -24,6 +24,7 @@
 		9CA0F7B71E8A9E9A00141795 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0F7B61E8A9E9A00141795 /* HttpError.swift */; };
 		9CD20C781E8D0D50005ACA65 /* BandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD20C771E8D0D50005ACA65 /* BandModel.swift */; };
 		9CEDB52A1E89286900593363 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDB5291E89286900593363 /* UserModel.swift */; };
+		9CF1507E1E8D53C100DD69CC /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1507D1E8D53C100DD69CC /* UserFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		9CA0F7B61E8A9E9A00141795 /* HttpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpError.swift; path = Enums/HttpError.swift; sourceTree = "<group>"; };
 		9CD20C771E8D0D50005ACA65 /* BandModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandModel.swift; path = Models/BandModel.swift; sourceTree = "<group>"; };
 		9CEDB5291E89286900593363 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Models/UserModel.swift; sourceTree = "<group>"; };
+		9CF1507D1E8D53C100DD69CC /* UserFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserFactory.swift; path = Providers/UserFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		9C992A021E84385E00342D2B /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				9CF1507D1E8D53C100DD69CC /* UserFactory.swift */,
 			);
 			name = Providers;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				9C7BDF251E86E0B7004421A2 /* AddBandViewController.swift in Sources */,
 				9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */,
 				9C7BDF231E86BF65004421A2 /* TabBarViewController.swift in Sources */,
+				9CF1507E1E8D53C100DD69CC /* UserFactory.swift in Sources */,
 				9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */,
 				9CEDB52A1E89286900593363 /* UserModel.swift in Sources */,
 				9C51D5141E8542B3002A94EC /* SignUpViewController.swift in Sources */,
