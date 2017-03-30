@@ -8,11 +8,24 @@
 
 import UIKit
 
-class AddBandViewController: UIViewController {
+class AddBandViewController: UIViewController, HttpRequesterDelegate {
 
     @IBOutlet weak var textFieldBandName: UITextField!
     @IBOutlet weak var textFieldBandEmail: UITextField!
     @IBOutlet weak var textFieldBandPhone: UITextField!
+    
+    var url: String {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return "\(appDelegate.baseUrl)"
+        }
+    }
+    var http: HttpRequester? {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.http
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -32,21 +45,22 @@ class AddBandViewController: UIViewController {
         let bandPhone = textFieldBandPhone.text
         
         
-        let userJson = [
-            "username": username,
-            "passHash": password,
-            "email": email
-        ]
+        let bandJson = [
+            "name": bandName!,
+            "contactPhone": bandPhone!,
+            "contactEmail": bandEmail!,
+            "bandMembers": []
+        ] as [String : Any]
         
         self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.196.182:8080/auth/register", withBody: userJson)
+        self.http?.postJson(toUrl: "http://192.168.1.249:8080/band/create", withBody: bandJson)
     }
     
     func didReciveData(data: Any) {
         print(data)
-        let userData = data as! Dictionary<String, Any>
-        let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
-        print(user)
+        let bandData = data as! Dictionary<String, Any>
+        let band = BandModel(json: bandData.values.first as! Dictionary<String, Any>)
+        print(band)
     }
 
     

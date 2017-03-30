@@ -15,7 +15,7 @@ struct BandModel: Decodable {
     let name: String?
     let email: String?
     let phone: String?
-    let bandMembers: Array<Any>?
+    let bandMembers: Array<String>?
     
     init?(json: JSON) {
         self.bandId = "_id" <~~ json
@@ -30,7 +30,8 @@ struct BandModel: Decodable {
             "_id" ~~> self.bandId,
             "name" ~~> self.name,
             "contactEmail" ~~> self.email,
-            "contactPhone" ~~> self.phone
+            "contactPhone" ~~> self.phone,
+            "bandMembers" ~~> self.bandMembers,
             ])
     }
     
