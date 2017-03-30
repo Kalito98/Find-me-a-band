@@ -26,9 +26,12 @@ class SignInViewController: UIViewController, HttpRequesterDelegate {
         }
     }
     
+    var userFactory: UserFactory?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        userFactory = UserFactory()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -42,11 +45,7 @@ class SignInViewController: UIViewController, HttpRequesterDelegate {
         let username = textFieldUserName.text
         let password = textFieldPassword.text
         
-        
-        let userJson = [
-            "username": username,
-            "passHash": password
-        ]
+        let userJson = userFactory?.getSignInUser(withUsername: username!, andPassword: password!)
         
         self.http?.delegate = self
         self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/login", withBody: userJson)

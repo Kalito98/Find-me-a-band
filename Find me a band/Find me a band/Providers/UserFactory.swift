@@ -10,11 +10,22 @@ import Foundation
 
 class UserFactory {
 
-    func getSignUpUser(withUsername username: String, withEmail email: String, withPassword password: String) -> Dictionary<String, Any> {
+    func getSignUpUser(withUsername username: String, withEmail email: String, andPassword password: String) -> Dictionary<String, Any> {
         let userJson = [
             "username": username,
             "passHash": password,
             "email": email
+        ]
+        
+        let user = UserModel(json: userJson)
+        
+        return user!.toJSON()! as Dictionary<String, Any>
+    }
+    
+    func getSignInUser(withUsername username: String, andPassword password: String) -> Dictionary<String, Any> {
+        let userJson = [
+            "useranme": username,
+            "passHash": password
         ]
         
         let user = UserModel(json: userJson)

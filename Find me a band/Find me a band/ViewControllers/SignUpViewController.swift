@@ -48,7 +48,7 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
         let email = textFieldEmail.text
         let password = textFieldPass.text
         
-        let userJson = userFactory?.getSignUpUser(withUsername: username!, withEmail: email!, withPassword: password!)
+        let userJson = userFactory?.getSignUpUser(withUsername: username!, withEmail: email!, andPassword: password!)
         
         self.http?.delegate = self
         self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: userJson)
