@@ -67,6 +67,9 @@
                                 <rect key="frame" x="16" y="364" width="91" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Band"/>
+                                <connections>
+                                    <action selector="createBand:" destination="zin-ix-Ht4" eventType="touchUpInside" id="SX6-qI-8D3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Band Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsC-0N-1kE">
                                 <rect key="frame" x="16" y="263" width="343" height="21"/>
@@ -80,6 +83,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Band" id="VMd-PV-LYL"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textFieldBandEmail" destination="US2-yk-EEQ" id="ubb-2s-Bcv"/>
+                        <outlet property="textFieldBandName" destination="pdz-Mj-u4n" id="8ob-t7-aEP"/>
+                        <outlet property="textFieldBandPhone" destination="tOJ-At-016" id="HZI-tX-Fel"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6F-2a-I8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +106,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pBn-8y-gMd" id="ddv-7L-EHU">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
