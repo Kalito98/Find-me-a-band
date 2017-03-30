@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class AddBandViewController: UIViewController, HttpRequesterDelegate {
 
@@ -40,6 +41,7 @@ class AddBandViewController: UIViewController, HttpRequesterDelegate {
     }
     
     @IBAction func createBand(_ sender: UIButton) {
+        SwiftSpinner.show("Creating Band")
         let bandName = textFieldBandName.text
         let bandEmail = textFieldBandEmail.text
         let bandPhone = textFieldBandPhone.text
@@ -60,6 +62,7 @@ class AddBandViewController: UIViewController, HttpRequesterDelegate {
         print(data)
         let bandData = data as! Dictionary<String, Any>
         let band = BandModel(json: bandData.values.first as! Dictionary<String, Any>)
+        SwiftSpinner.hide()
         print(band)
     }
 

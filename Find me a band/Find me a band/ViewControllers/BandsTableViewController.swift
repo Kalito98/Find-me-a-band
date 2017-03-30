@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpRequesterDelegate {
     var bands: [BandModel] = []
@@ -28,6 +29,9 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
         super.viewDidLoad()
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "band-cell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.loadBands()
     }
 
@@ -50,7 +54,10 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
     
     func loadBands() {
         self.http?.delegate = self
-        print(self.http?.delegate)
+        //print(self.http?.delegate)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
+            SwiftSpinner.show("Loading Bands")
+        }
         self.http?.get(fromUrl: "http://192.168.1.249:8080/band/getall")
     }
     
@@ -64,6 +71,7 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+        SwiftSpinner.hide()
     }
     
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class SignInViewController: UIViewController, HttpRequesterDelegate {
     
@@ -42,6 +43,7 @@ class SignInViewController: UIViewController, HttpRequesterDelegate {
     
     
     @IBAction func SignIn(_ sender: UIButton) {
+        SwiftSpinner.show("Signing In")
         let username = textFieldUserName.text
         let password = textFieldPassword.text
         

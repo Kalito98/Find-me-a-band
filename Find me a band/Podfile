@@ -10,4 +10,5 @@ target 'Find me a band' do
   pod 'Swinject', '~> 2.0.0'
   pod 'SwinjectStoryboard', '~> 1.0.0'
   pod 'Gloss', '~> 1.2'
+  pod 'SwiftSpinner'
 end

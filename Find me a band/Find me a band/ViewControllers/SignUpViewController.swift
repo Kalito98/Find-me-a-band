@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class SignUpViewController: UIViewController, HttpRequesterDelegate {
     
@@ -44,6 +45,7 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
 
     
     @IBAction func signUp(_ sender: UIButton) {
+        SwiftSpinner.show("Signing Up")
         let username = textFieldUserName.text
         let email = textFieldEmail.text
         let password = textFieldPass.text
@@ -58,6 +60,7 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
         print(data)
         let userData = data as! Dictionary<String, Any>
         let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
+        SwiftSpinner.hide()
         print(user)
     }
     /*
