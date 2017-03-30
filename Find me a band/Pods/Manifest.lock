@@ -1,22 +1,19 @@
 PODS:
   - Gloss (1.2.3)
-  - SwiftyJSON (3.1.4)
   - Swinject (2.0.0)
   - SwinjectStoryboard (1.0.0):
     - Swinject (= 2.0.0)
 
 DEPENDENCIES:
   - Gloss (~> 1.2)
-  - SwiftyJSON
   - Swinject (~> 2.0.0)
   - SwinjectStoryboard (~> 1.0.0)
 
 SPEC CHECKSUMS:
   Gloss: 68e6a054e5ba1e2d9eef8f1f69300035bf52d13d
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
 
-PODFILE CHECKSUM: 622c672c6f29b724f106cb227941edb071b56487
+PODFILE CHECKSUM: 433c746a3149125f30c155b73de2caac504b1331
 
 COCOAPODS: 1.2.0

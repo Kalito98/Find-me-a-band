@@ -28,8 +28,11 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
         }
     }
     
+    var userFactory: UserFactory?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        userFactory = UserFactory()
 
         // Do any additional setup after loading the view.
     }
@@ -45,12 +48,7 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
         let email = textFieldEmail.text
         let password = textFieldPass.text
         
-        
-        let userJson = [
-        "username": username,
-        "passHash": password,
-        "email": email
-        ]
+        let userJson = userFactory?.getSignUpUser(withUsername: username!, withEmail: email!, withPassword: password!)
         
         self.http?.delegate = self
         self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: userJson)
@@ -62,8 +60,6 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
         let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
         print(user)
     }
-    
-    
     /*
     // MARK: - Navigation
 

@@ -10,7 +10,7 @@ import Foundation
 
 class UserFactory {
 
-    func getSignUpUser(withUsername username: String, withEmail email: String, withPassword password: String) -> JSONSerialization {
+    func getSignUpUser(withUsername username: String, withEmail email: String, withPassword password: String) -> Dictionary<String, Any> {
         let userJson = [
             "username": username,
             "passHash": password,
@@ -19,6 +19,6 @@ class UserFactory {
         
         let user = UserModel(json: userJson)
         
-        return user?.toJSON() as JSONSerialization
+        return user!.toJSON()! as Dictionary<String, Any>
     }
 }
