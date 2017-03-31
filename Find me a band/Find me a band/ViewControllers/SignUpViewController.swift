@@ -15,14 +15,6 @@ class SignUpViewController: UIViewController, UsersDataDelegate {
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var textFieldPass: UITextField!
     
-    
-    var url: String {
-        get{
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return "\(appDelegate.baseUrl)"
-        }
-    }
-    
     var userFactory: UserFactory?
     var usersData: UsersData?
     

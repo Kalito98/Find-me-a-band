@@ -9,21 +9,9 @@
 import UIKit
 import SwiftSpinner
 
-class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpRequesterDelegate {
+class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDataDelegate {
     var bands: [BandModel] = []
-    
-    var url: String {
-        get{
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return "\(appDelegate.baseUrl)"
-        }
-    }
-    var http: HttpRequester? {
-        get{
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return appDelegate.http
-        }
-    }
+    var bandsData: BandsData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +20,7 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        bandsData = BandsData()
         self.loadBands()
     }
 
@@ -53,20 +42,16 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
     }
     
     func loadBands() {
-        //self.http?.delegate = self
-        //print(self.http?.delegate)
+        self.bandsData?.delegate = self
         //DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
         //    SwiftSpinner.show("Loading Bands")
         //}
-        //self.http?.get(fromUrl: "http://192.168.1.249:8080/band/getall")
+        //bandsData?.getAll()
     }
     
-    func didReciveData(data: Any) {
+    func didReciveBandsData(data: Any) {
         let dataArray = data as! [Dictionary<String, Any>]
-        print(dataArray)
-        
         self.bands = [BandModel].from(jsonArray: dataArray)!
-        print(bands)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -82,7 +67,6 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "band-cell", for: indexPath)
-        print(self.bands[indexPath.row].name)
         cell.textLabel?.text = self.bands[indexPath.row].name
 
 

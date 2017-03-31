@@ -59,11 +59,9 @@ class AddBandViewController: UIViewController, HttpRequesterDelegate {
     }
     
     func didReciveData(data: Any) {
-        print(data)
-        let bandData = data as! Dictionary<String, Any>
-        let band = BandModel(json: bandData.values.first as! Dictionary<String, Any>)
+        //let bandData = data as! Dictionary<String, Any>
+        //let band = BandModel(json: bandData.values.first as! Dictionary<String, Any>)
         SwiftSpinner.hide()
-        print(band)
     }
 
     
