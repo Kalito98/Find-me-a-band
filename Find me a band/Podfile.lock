@@ -4,19 +4,22 @@ PODS:
   - Swinject (2.0.0)
   - SwinjectStoryboard (1.0.0):
     - Swinject (= 2.0.0)
+  - Toaster (2.0.3)
 
 DEPENDENCIES:
   - Gloss (~> 1.2)
   - SwiftSpinner
   - Swinject (~> 2.0.0)
   - SwinjectStoryboard (~> 1.0.0)
+  - Toaster (~> 2.0)
 
 SPEC CHECKSUMS:
   Gloss: 68e6a054e5ba1e2d9eef8f1f69300035bf52d13d
   SwiftSpinner: 6892642232471da581ecb020a9150e07d17a954b
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
+  Toaster: 77c0b03d78e680bbbab0071c9c7ee392b0034010
 
-PODFILE CHECKSUM: '08b50c4d86e969642048b2d475903d30d2c45c29'
+PODFILE CHECKSUM: fc776146fa2a01ecc3eace931a52ce4892f506e5
 
 COCOAPODS: 1.2.0

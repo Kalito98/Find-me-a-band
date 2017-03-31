@@ -23,6 +23,7 @@
 		9C9596211E8E6341004EC58B /* BandsDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9596201E8E6341004EC58B /* BandsDataDelegate.swift */; };
 		9C9929FE1E84376E00342D2B /* BandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */; };
 		9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C992A031E8438E300342D2B /* HttpRequester.swift */; };
+		9C9E25BB1E8E842B008709AD /* StringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E25BA1E8E842B008709AD /* StringValidator.swift */; };
 		9C9F8B901E89984900BB5993 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F8B8F1E89984900BB5993 /* HttpMethod.swift */; };
 		9C9F8B931E89997E00BB5993 /* HttpRequesterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F8B921E89997E00BB5993 /* HttpRequesterDelegate.swift */; };
 		9CA0F7B71E8A9E9A00141795 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0F7B61E8A9E9A00141795 /* HttpError.swift */; };
@@ -52,6 +53,7 @@
 		9C9596201E8E6341004EC58B /* BandsDataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsDataDelegate.swift; path = Data/BandsDataDelegate.swift; sourceTree = "<group>"; };
 		9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsTableViewController.swift; path = ViewControllers/BandsTableViewController.swift; sourceTree = "<group>"; };
 		9C992A031E8438E300342D2B /* HttpRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequester.swift; path = Utils/HttpRequester.swift; sourceTree = "<group>"; };
+		9C9E25BA1E8E842B008709AD /* StringValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidator.swift; path = Utils/StringValidator.swift; sourceTree = "<group>"; };
 		9C9F8B8F1E89984900BB5993 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpMethod.swift; path = Enums/HttpMethod.swift; sourceTree = "<group>"; };
 		9C9F8B921E89997E00BB5993 /* HttpRequesterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequesterDelegate.swift; path = Utils/HttpRequesterDelegate.swift; sourceTree = "<group>"; };
 		9CA0F7B61E8A9E9A00141795 /* HttpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpError.swift; path = Enums/HttpError.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				9C9F8B911E89995100BB5993 /* Http */,
+				9C9E25BA1E8E842B008709AD /* StringValidator.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				9C95961D1E8E5061004EC58B /* UsersDataDelegate.swift in Sources */,
 				9CEDB52A1E89286900593363 /* UserModel.swift in Sources */,
 				9C51D5141E8542B3002A94EC /* SignUpViewController.swift in Sources */,
+				9C9E25BB1E8E842B008709AD /* StringValidator.swift in Sources */,
 				9C95961A1E8E4F40004EC58B /* UsersData.swift in Sources */,
 				9C9F8B931E89997E00BB5993 /* HttpRequesterDelegate.swift in Sources */,
 			);
