@@ -53,12 +53,12 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
     }
     
     func loadBands() {
-        self.http?.delegate = self
+        //self.http?.delegate = self
         //print(self.http?.delegate)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
-            SwiftSpinner.show("Loading Bands")
-        }
-        self.http?.get(fromUrl: "http://192.168.1.249:8080/band/getall")
+        //DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
+        //    SwiftSpinner.show("Loading Bands")
+        //}
+        //self.http?.get(fromUrl: "http://192.168.1.249:8080/band/getall")
     }
     
     func didReciveData(data: Any) {
@@ -70,6 +70,9 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, HttpReq
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(3500)) {
+            SwiftSpinner.hide()
         }
         SwiftSpinner.hide()
     }

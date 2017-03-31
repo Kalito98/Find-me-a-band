@@ -9,7 +9,7 @@
 import UIKit
 import SwiftSpinner
 
-class SignInViewController: UIViewController, HttpRequesterDelegate {
+class SignInViewController: UIViewController, UsersDataDelegate {
     
     @IBOutlet weak var textFieldUserName: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
@@ -20,18 +20,14 @@ class SignInViewController: UIViewController, HttpRequesterDelegate {
             return "\(appDelegate.baseUrl)"
         }
     }
-    var http: HttpRequester? {
-        get{
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return appDelegate.http
-        }
-    }
     
     var userFactory: UserFactory?
+    var usersData: UsersData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userFactory = UserFactory()
+        usersData = UsersData()
         
         // Do any additional setup after loading the view.
     }
@@ -49,8 +45,8 @@ class SignInViewController: UIViewController, HttpRequesterDelegate {
         
         let userJson = userFactory?.getSignInUser(withUsername: username!, andPassword: password!)
         
-        self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/login", withBody: userJson)
+        usersData?.delegate = self
+        usersData?.login(user: userJson!)
     }
     
     /*

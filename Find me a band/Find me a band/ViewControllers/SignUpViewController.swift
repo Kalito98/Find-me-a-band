@@ -9,7 +9,7 @@
 import UIKit
 import SwiftSpinner
 
-class SignUpViewController: UIViewController, HttpRequesterDelegate {
+class SignUpViewController: UIViewController, UsersDataDelegate {
     
     @IBOutlet weak var textFieldUserName: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
@@ -22,18 +22,14 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
             return "\(appDelegate.baseUrl)"
         }
     }
-    var http: HttpRequester? {
-        get{
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return appDelegate.http
-        }
-    }
     
     var userFactory: UserFactory?
+    var usersData: UsersData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userFactory = UserFactory()
+        usersData = UsersData()
 
         // Do any additional setup after loading the view.
     }
@@ -52,16 +48,15 @@ class SignUpViewController: UIViewController, HttpRequesterDelegate {
         
         let userJson = userFactory?.getSignUpUser(withUsername: username!, withEmail: email!, andPassword: password!)
         
-        self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: userJson)
+        usersData?.delegate = self
+        usersData?.register(user: userJson!)
     }
     
-    func didReciveData(data: Any) {
-        print(data)
-        let userData = data as! Dictionary<String, Any>
-        let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
+    func didReciveUsersData(usersData: Any) {
+        print(usersData)
+        //let userData = data as! Dictionary<String, Any>
+        //let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
         SwiftSpinner.hide()
-        print(user)
     }
     /*
     // MARK: - Navigation
