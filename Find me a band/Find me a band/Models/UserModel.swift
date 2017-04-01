@@ -15,12 +15,14 @@ struct UserModel: Decodable {
     let username: String?
     let email: String?
     let passHash: String?
+    let role: String?
     
     init?(json: JSON) {
         self.userId = "_id" <~~ json
         self.username = "username" <~~ json
         self.email = "email" <~~ json
         self.passHash = "passHash" <~~ json
+        self.role = "role" <~~ json
     }
     
     func toJSON() -> JSON? {
@@ -28,7 +30,8 @@ struct UserModel: Decodable {
             "_id" ~~> self.userId,
             "username" ~~> self.username,
             "email" ~~> self.email,
-            "passHash" ~~> self.passHash
+            "passHash" ~~> self.passHash,
+            "role" ~~> self.role
             ])
     }
     

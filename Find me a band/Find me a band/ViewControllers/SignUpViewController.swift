@@ -17,11 +17,13 @@ class SignUpViewController: UIViewController, UsersDataDelegate {
     
     var userFactory: UserFactory?
     var usersData: UsersData?
+    var sessionManager: SessionManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userFactory = UserFactory()
         usersData = UsersData()
+        sessionManager = SessionManager()
 
         // Do any additional setup after loading the view.
     }
@@ -45,9 +47,9 @@ class SignUpViewController: UIViewController, UsersDataDelegate {
     }
     
     func didReciveUsersData(usersData: Any) {
-        print(usersData)
-        //let userData = data as! Dictionary<String, Any>
-        //let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
+        let userData = usersData as! Dictionary<String, Any>
+        let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
+        sessionManager?.setSession(withUsername: (user?.username)!, withId: (user?.userId)!, andRole: (user?.role)!)
         SwiftSpinner.hide()
     }
     /*

@@ -15,17 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
     var tabBarController: UITabBarController?
     var baseUrl: String = "http://192.168.1.249:8080/auth/register"
     var http: HttpRequester?
+    var sessionManager: SessionManager?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.http = HttpRequester()
+        self.sessionManager = SessionManager()
         
         tabBarController = UITabBarController()
         tabBarUnauthorized()
 
         
         //crap and testing
-        
+        sessionManager?.isLogged()
         //crap and testing
         
         return true

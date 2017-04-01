@@ -9,6 +9,7 @@
 import Foundation
 
 class StringValidator {
-    func isValid(withString string: String, withMaxLenght maxLenght: int, andMinLenght minLenght: int ) -> Bool {
+    func isValid(withString string: String, withMaxLenght maxLenght: Int, andMinLenght minLenght: Int ) -> Bool {
+        return true
     }
 }
