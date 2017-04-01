@@ -14,6 +14,7 @@ class SignUpViewController: UIViewController, UsersDataDelegate {
     @IBOutlet weak var textFieldUserName: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var textFieldPass: UITextField!
+    @IBOutlet weak var textFieldRole: UITextField!
     
     var userFactory: UserFactory?
     var usersData: UsersData?
@@ -39,8 +40,9 @@ class SignUpViewController: UIViewController, UsersDataDelegate {
         let username = textFieldUserName.text
         let email = textFieldEmail.text
         let password = textFieldPass.text
+        let role = textFieldRole.text
         
-        let userJson = userFactory?.getSignUpUser(withUsername: username!, withEmail: email!, andPassword: password!)
+        let userJson = userFactory?.getSignUpUser(withUsername: username!, withEmail: email!, withRole: role!, andPassword: password!)
         
         usersData?.delegate = self
         usersData?.register(user: userJson!)
@@ -49,7 +51,6 @@ class SignUpViewController: UIViewController, UsersDataDelegate {
     func didReciveUsersData(usersData: Any) {
         let userData = usersData as! Dictionary<String, Any>
         let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
-        sessionManager?.setSession(withUsername: (user?.username)!, withId: (user?.userId)!, andRole: (user?.role)!)
         SwiftSpinner.hide()
     }
     /*

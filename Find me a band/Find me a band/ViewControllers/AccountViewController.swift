@@ -9,16 +9,25 @@
 import UIKit
 
 class AccountViewController: UIViewController {
-
+    var sessionManager: SessionManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        sessionManager = SessionManager()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func signOut(_ sender: UIButton) {
+        sessionManager?.removeSession()
+        let storyboardName: String = "Main"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarUnauthorized") as? UITabBarController
+        self.present(tabBarController!, animated: true, completion: nil)
     }
     
 

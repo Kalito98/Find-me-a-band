@@ -16,11 +16,13 @@ class SignInViewController: UIViewController, UsersDataDelegate {
     
     var userFactory: UserFactory?
     var usersData: UsersData?
+    var sessionManager: SessionManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userFactory = UserFactory()
         usersData = UsersData()
+        sessionManager = SessionManager()
         
         // Do any additional setup after loading the view.
     }
@@ -40,6 +42,21 @@ class SignInViewController: UIViewController, UsersDataDelegate {
         
         usersData?.delegate = self
         usersData?.login(user: userJson!)
+    }
+    
+    func didReciveUsersData(usersData: Any) {
+        let userData = usersData as! Dictionary<String, Any>
+        let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
+        sessionManager?.setSession(withUsername: (user?.username)!, withId: (user?.userId)!, andRole: (user?.role)!)
+        SwiftSpinner.hide()
+        
+        let storyboardName: String = "Main"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarAuthorized") as? UITabBarController
+        DispatchQueue.main.async{
+            self.present(tabBarController!, animated: true, completion: nil)
+        }
+
     }
     
     /*

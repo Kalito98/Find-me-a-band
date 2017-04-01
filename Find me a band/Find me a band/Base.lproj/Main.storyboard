@@ -123,10 +123,48 @@
             </objects>
             <point key="canvasLocation" x="1190" y="-642"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="1aP-oP-4sG">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarUnauthorized" id="DXj-Vh-5eN" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="EDR-FE-hPh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="spb-IX-ps7" kind="relationship" relationship="viewControllers" id="o0Z-Jv-pW8"/>
+                        <segue destination="17G-ct-AXY" kind="relationship" relationship="viewControllers" id="0ua-3y-AID"/>
+                        <segue destination="ili-1h-BMD" kind="relationship" relationship="viewControllers" id="3sj-pB-Jqg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDL-O9-Ueg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2375" y="-1457"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aLD-gK-79z">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarAuthorized" id="MUd-g1-eau" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="B16-Ny-NHt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="spb-IX-ps7" kind="relationship" relationship="viewControllers" id="JhQ-Ih-Yf6"/>
+                        <segue destination="zin-ix-Ht4" kind="relationship" relationship="viewControllers" id="8kS-2G-lUc"/>
+                        <segue destination="3Xi-I7-tVD" kind="relationship" relationship="viewControllers" id="ZMn-lt-954"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUL-P9-Ztn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3498" y="-1471"/>
+        </scene>
         <!--Account-->
         <scene sceneID="FzE-iN-2CZ">
             <objects>
-                <viewController storyboardIdentifier="accountView" id="3Xi-I7-tVD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountView" id="3Xi-I7-tVD" customClass="AccountViewController" customModule="Find_me_a_band" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ewb-r1-BqR"/>
                         <viewControllerLayoutGuide type="bottom" id="mQN-DW-FqB"/>
@@ -142,6 +180,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mre-kf-aJY">
+                                <rect key="frame" x="36" y="154" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="3Xi-I7-tVD" eventType="touchUpInside" id="qGz-JZ-OFP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -282,8 +328,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Role in Band" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZz-xh-Vjn">
+                                <rect key="frame" x="16" y="334" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3q-E1-SIF">
+                                <rect key="frame" x="16" y="363" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpq-Jc-QXK">
-                                <rect key="frame" x="16" y="360" width="94" height="55"/>
+                                <rect key="frame" x="16" y="416" width="94" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SIgn up"/>
                                 <connections>
@@ -298,6 +358,7 @@
                     <connections>
                         <outlet property="textFieldEmail" destination="uz8-nY-mTG" id="Q36-Wg-kQa"/>
                         <outlet property="textFieldPass" destination="gjO-kH-HjO" id="K12-oq-6aU"/>
+                        <outlet property="textFieldRole" destination="z3q-E1-SIF" id="5i1-Gh-T3N"/>
                         <outlet property="textFieldUserName" destination="7rZ-JM-tm1" id="aiK-Mk-YOC"/>
                     </connections>
                 </viewController>
@@ -306,4 +367,7 @@
             <point key="canvasLocation" x="3589.5999999999999" y="-643.62818590704649"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="o0Z-Jv-pW8"/>
+    </inferredMetricsTieBreakers>
 </document>

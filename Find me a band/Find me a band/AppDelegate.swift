@@ -22,12 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
         self.http = HttpRequester()
         self.sessionManager = SessionManager()
         
-        tabBarController = UITabBarController()
-        tabBarUnauthorized()
+        if (sessionManager?.isLogged())! {
+            tabBarAuthorized()
+        } else {
+            tabBarUnauthorized()
+        }
 
         
         //crap and testing
-        sessionManager?.isLogged()
         //crap and testing
         
         return true
@@ -58,28 +60,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
     func tabBarAuthorized() {
         let storyboardName: String = "Main"
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        
-        let bandsTablleViewController: UIViewController? =  storyboard.instantiateViewController(withIdentifier: "bandsTableView")
-        let addBandViewController: UIViewController? =  storyboard.instantiateViewController(withIdentifier: "addBandView")
-        let accountViewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "accountView")
-        
-        tabBarController?.viewControllers = [bandsTablleViewController!, addBandViewController!, accountViewController!]
-        
+        tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarAuthorized") as? UITabBarController
         window?.rootViewController = tabBarController
     }
     
     func tabBarUnauthorized() {
         let storyboardName: String = "Main"
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        
-        let bandsTablleViewController: UIViewController? =  storyboard.instantiateViewController(withIdentifier: "bandsTableView")
-        let signUpViewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signUpView")
-        let signInViewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signInView")
-        
-        tabBarController?.viewControllers = [bandsTablleViewController!, signInViewController!, signUpViewController!]
-        
+        tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarUnauthorized") as? UITabBarController
         window?.rootViewController = tabBarController
     }
+    
+//    func tabBarAuthorized() {
+//        let storyboardName: String = "Main"
+//        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+//        
+//        let bandsTablleViewController: UIViewController? =  storyboard.instantiateViewController(withIdentifier: "bandsTableView")
+//        let addBandViewController: UIViewController? =  storyboard.instantiateViewController(withIdentifier: "addBandView")
+//        let accountViewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "accountView")
+//        
+//        tabBarController?.viewControllers = [bandsTablleViewController!, addBandViewController!, accountViewController!]
+//        
+//        window?.rootViewController = tabBarController
+//    }
+//    
+//    func tabBarUnauthorized() {
+//        let storyboardName: String = "Main"
+//        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+//        
+//        let bandsTablleViewController: UIViewController? =  storyboard.instantiateViewController(withIdentifier: "bandsTableView")
+//        let signUpViewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signUpView")
+//        let signInViewController: UIViewController? = storyboard.instantiateViewController(withIdentifier: "signInView")
+//        
+//        tabBarController?.viewControllers = [bandsTablleViewController!, signInViewController!, signUpViewController!]
+//        
+//        window?.rootViewController = tabBarController
+//    }
 
 
 }
