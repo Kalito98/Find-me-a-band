@@ -95,7 +95,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Band" id="VMd-PV-LYL"/>
+                    <tabBarItem key="tabBarItem" title="Add Band" image="Metal Music-25" id="VMd-PV-LYL"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textFieldBandEmail" destination="US2-yk-EEQ" id="ubb-2s-Bcv"/>
@@ -131,7 +131,7 @@
                             <outlet property="delegate" destination="spb-IX-ps7" id="87r-Wf-37L"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Bands" id="Woz-hM-PR8"/>
+                    <tabBarItem key="tabBarItem" title="Bands" image="Musical Stories-25" id="Woz-hM-PR8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVl-Mk-4gF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,7 +273,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" id="Cgk-IM-EPp"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="Music Conductor-25" id="Cgk-IM-EPp"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bandsTableView" destination="V6b-ja-o9n" id="2rJ-VN-Cyp"/>
@@ -446,7 +446,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sign In" id="cOD-MD-iVe"/>
+                    <tabBarItem key="tabBarItem" title="Sign In" image="Enter-25" id="cOD-MD-iVe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textFieldPassword" destination="Duw-J1-7PH" id="CUb-g0-E5b"/>
@@ -543,7 +543,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sign Up" id="yah-od-NjP"/>
+                    <tabBarItem key="tabBarItem" title="Sign Up" image="Login Rounded Up-25" id="yah-od-NjP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textFieldEmail" destination="uz8-nY-mTG" id="Q36-Wg-kQa"/>
@@ -557,6 +557,13 @@
             <point key="canvasLocation" x="3589.5999999999999" y="-643.62818590704649"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Enter-25" width="25" height="25"/>
+        <image name="Login Rounded Up-25" width="25" height="25"/>
+        <image name="Metal Music-25" width="25" height="25"/>
+        <image name="Music Conductor-25" width="25" height="25"/>
+        <image name="Musical Stories-25" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="o0Z-Jv-pW8"/>
     </inferredMetricsTieBreakers>
