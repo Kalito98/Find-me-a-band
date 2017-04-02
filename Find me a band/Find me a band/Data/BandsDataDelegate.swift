@@ -11,6 +11,7 @@ import Foundation
 protocol BandsDataDelegate {
     func didReciveBandsData(bandsData: Any)
     func didReceiveBandsError(error: HttpError)
+    func didDeleteBands()
 }
 
 extension BandsDataDelegate {
@@ -19,6 +20,10 @@ extension BandsDataDelegate {
     }
     
     func didReceiveBandsError(error: HttpError) {
+        
+    }
+    
+    func didDeleteBands() {
         
     }
 }

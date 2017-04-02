@@ -55,6 +55,20 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            self.deleteBandAt(index: indexPath.row)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+
 
     @IBAction func signOut(_ sender: UIButton) {
         sessionManager?.removeSession()
@@ -78,6 +92,13 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.labelHello.text = "Hello, \(username! as String)"
         }
     }
+    
+    func deleteBandAt(index: Int) {
+        self.bandsData?.delegate = self
+        SwiftSpinner.show("Deleting Band")
+        let band = self.bands[index]
+        bandsData?.deleteBand(band: band.toJSON()! as Dictionary<String, Any>)
+    }
 
     
     func didReciveBandsData(bandsData: Any) {
@@ -91,6 +112,11 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func didReceiveBandsError(error: HttpError) {
+        SwiftSpinner.hide()
+    }
+    
+    func didDeleteBands() {
+        self.loadBands()
         SwiftSpinner.hide()
     }
 

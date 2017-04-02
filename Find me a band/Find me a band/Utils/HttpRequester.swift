@@ -19,8 +19,8 @@ class HttpRequester {
         self.send(withMethod: .post, toUrl: urlString, withBody: bodyInput, andHeaders: headers)
     }
     
-    func delete(atUrl urlString: String, withHeaders headers: Dictionary<String, String> = [:]) {
-        self.send(withMethod: .delete, toUrl: urlString, andHeaders: headers)
+    func delete(atUrl urlString: String, withBody bodyInput: Any?, andHeaders headers: Dictionary<String, String> = [:]) {
+        self.send(withMethod: .delete, toUrl: urlString, withBody: bodyInput, andHeaders: headers)
     }
     
     func put(atUrl urlString: String, withBody bodyInput: Any?, andHeaders headers: Dictionary<String, String> = [:]) {
@@ -41,6 +41,13 @@ class HttpRequester {
         self.put(atUrl: urlString, withBody: bodyInput, andHeaders: headersWithJson)
     }
     
+    func deleteJson(atUrl urlString: String, withBody bodyInput: Any?, andHeaders headers: Dictionary<String, String> = [:]){
+        var headersWithJson: Dictionary<String,String>= [:]
+        headers.forEach(){ headersWithJson[$0.key] = $0.value }
+        headersWithJson["Content-Type"] = "application/json"
+        self.delete(atUrl: urlString, withBody: bodyInput, andHeaders: headersWithJson)
+    }
+    
     func send(withMethod method: HttpMethod,
               toUrl urlString: String,
               withBody bodyInput: Any? = nil,
@@ -57,7 +64,6 @@ class HttpRequester {
             } catch {
             }
         }
-        
         
         headers.forEach() { request.setValue($0.value, forHTTPHeaderField: $0.key) }
         
