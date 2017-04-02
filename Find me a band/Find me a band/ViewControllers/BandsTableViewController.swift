@@ -41,12 +41,22 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
         return self.bands.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.showDetails(of: self.bands[indexPath.row])
+    }
+    
     func loadBands() {
         self.bandsData?.delegate = self
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
             //SwiftSpinner.show("Loading Bands")
         }
         bandsData?.getAll()
+    }
+    
+    func showDetails(of band: BandModel) {
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "bandsDetailsView") as! BandsDetailsViewController
+        nextVC.band = band
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func didReciveBandsData(bandsData: Any) {
@@ -60,8 +70,6 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
     }
     
     
-
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "band-cell", for: indexPath)
         cell.textLabel?.text = self.bands[indexPath.row].name

@@ -21,6 +21,7 @@
 		9C95961D1E8E5061004EC58B /* UsersDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C95961C1E8E5061004EC58B /* UsersDataDelegate.swift */; };
 		9C95961F1E8E6328004EC58B /* BandsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C95961E1E8E6328004EC58B /* BandsData.swift */; };
 		9C9596211E8E6341004EC58B /* BandsDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9596201E8E6341004EC58B /* BandsDataDelegate.swift */; };
+		9C98F5471E911542008D22EC /* BandsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F5461E911542008D22EC /* BandsDetailsViewController.swift */; };
 		9C9929FE1E84376E00342D2B /* BandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */; };
 		9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C992A031E8438E300342D2B /* HttpRequester.swift */; };
 		9C9E25BB1E8E842B008709AD /* StringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E25BA1E8E842B008709AD /* StringValidator.swift */; };
@@ -52,6 +53,7 @@
 		9C95961C1E8E5061004EC58B /* UsersDataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersDataDelegate.swift; path = Data/UsersDataDelegate.swift; sourceTree = "<group>"; };
 		9C95961E1E8E6328004EC58B /* BandsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsData.swift; path = Data/BandsData.swift; sourceTree = "<group>"; };
 		9C9596201E8E6341004EC58B /* BandsDataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsDataDelegate.swift; path = Data/BandsDataDelegate.swift; sourceTree = "<group>"; };
+		9C98F5461E911542008D22EC /* BandsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsDetailsViewController.swift; path = ViewControllers/BandsDetailsViewController.swift; sourceTree = "<group>"; };
 		9C9929FD1E84376E00342D2B /* BandsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandsTableViewController.swift; path = ViewControllers/BandsTableViewController.swift; sourceTree = "<group>"; };
 		9C992A031E8438E300342D2B /* HttpRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequester.swift; path = Utils/HttpRequester.swift; sourceTree = "<group>"; };
 		9C9E25BA1E8E842B008709AD /* StringValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringValidator.swift; path = Utils/StringValidator.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				9C73FEAA1E86B02400A2ED2B /* AccountViewController.swift */,
 				9C7BDF221E86BF65004421A2 /* TabBarViewController.swift */,
 				9C7BDF241E86E0B7004421A2 /* AddBandViewController.swift */,
+				9C98F5461E911542008D22EC /* BandsDetailsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				9CF1507E1E8D53C100DD69CC /* UserFactory.swift in Sources */,
 				9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */,
 				9C95961D1E8E5061004EC58B /* UsersDataDelegate.swift in Sources */,
+				9C98F5471E911542008D22EC /* BandsDetailsViewController.swift in Sources */,
 				9CEDB52A1E89286900593363 /* UserModel.swift in Sources */,
 				9C51D5141E8542B3002A94EC /* SignUpViewController.swift in Sources */,
 				9C9E25BB1E8E842B008709AD /* StringValidator.swift in Sources */,

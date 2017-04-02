@@ -40,6 +40,11 @@ class BandsData: HttpRequesterDelegate {
         self.http?.deleteJson(atUrl: "http://192.168.1.249:8080/band/delete", withBody: band)
     }
     
+    func putBandMember(member: Dictionary<String, Any>) {
+        self.http?.delegate = self
+        self.http?.putJson(atUrl: "http://192.168.1.249:8080/band/putBandMember", withBody: member)
+    }
+    
     func didReciveData(data: Any) {
         self.delegate?.didReciveBandsData(bandsData: data)
     }

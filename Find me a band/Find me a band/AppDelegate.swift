@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
         self.http = HttpRequester()
         self.sessionManager = SessionManager()
         
+        sessionManager?.removeSession()
+        
         if (sessionManager?.isLogged())! {
             tabBarAuthorized()
         } else {

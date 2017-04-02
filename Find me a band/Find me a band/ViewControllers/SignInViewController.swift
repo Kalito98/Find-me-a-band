@@ -52,7 +52,7 @@ class SignInViewController: UIViewController, UsersDataDelegate {
         
         let storyboardName: String = "Main"
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarAuthorized") as? UITabBarController
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "navigationControllerAuth") as? UINavigationController
         DispatchQueue.main.async{
             self.present(tabBarController!, animated: true, completion: nil)
         }

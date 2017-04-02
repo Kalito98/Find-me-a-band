@@ -31,6 +31,10 @@ class SessionManager {
         return userDefaults.value(forKey: "username") as! String
     }
     
+    func getRole() -> String {
+        return userDefaults.value(forKey: "role") as! String
+    }
+    
     func isLogged() -> Bool {
         if self.userDefaults.value(forKey: "username") == nil {
             return false

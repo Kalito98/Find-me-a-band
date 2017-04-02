@@ -15,7 +15,7 @@ struct BandModel: Decodable {
     let name: String?
     let email: String?
     let phone: String?
-    let bandMembers: Array<String>?
+    let bandMembers: [String]?
     let creator: String?
     let genre: String?
     

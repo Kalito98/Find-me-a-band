@@ -74,7 +74,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         sessionManager?.removeSession()
         let storyboardName: String = "Main"
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarUnauthorized") as? UITabBarController
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "navigationControllerUnauth") as? UINavigationController
         self.present(tabBarController!, animated: true, completion: nil)
     }
     
@@ -91,6 +91,12 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         DispatchQueue.main.async {
             self.labelHello.text = "Hello, \(username! as String)"
         }
+    }
+    
+    func showDetails(of band: BandModel) {
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "bandsDetailsView") as! BandsDetailsViewController
+        nextVC.band = band
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func deleteBandAt(index: Int) {
