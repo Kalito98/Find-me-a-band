@@ -23,7 +23,9 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         bandsData = BandsData()
         sessionManager = SessionManager()
         
-        self.bandsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "band-cell")
+        let bandsCell = UINib(nibName: "BandTableViewCell", bundle: nil)
+        self.bandsTableView.register(bandsCell, forCellReuseIdentifier: "band-cell")
+        self.bandsTableView.rowHeight = 70
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,8 +51,10 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "band-cell", for: indexPath)
-        cell.textLabel?.text = self.bands[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "band-cell", for: indexPath) as! BandTableViewCell
+        cell.textLableBandName.text = "Genre: \(self.bands[indexPath.row].genre!)"
+        cell.textLableBandCreator.text = "Creator: \(self.bands[indexPath.row].creator!)"
+        cell.textLableBandGenre.text = self.bands[indexPath.row].name
         
         return cell
     }
@@ -67,6 +71,10 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.showDetails(band: self.bands[indexPath.row])
     }
 
 
@@ -86,17 +94,17 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         bandsData?.getByUser(username: username)
     }
     
+    func showDetails(band: BandModel) {
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "bandsDetailsView") as! BandsDetailsViewController
+        nextVC.band = band
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
     func loadProfile() {
         let username = sessionManager?.getUsername()
         DispatchQueue.main.async {
             self.labelHello.text = "Hello, \(username! as String)"
         }
-    }
-    
-    func showDetails(of band: BandModel) {
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "bandsDetailsView") as! BandsDetailsViewController
-        nextVC.band = band
-        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func deleteBandAt(index: Int) {

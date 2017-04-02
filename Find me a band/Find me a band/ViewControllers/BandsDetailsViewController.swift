@@ -108,6 +108,7 @@ class BandsDetailsViewController: UIViewController, UITableViewDelegate, UITable
         SwiftSpinner.show("Joining Band")
         bandMembers?.append(username!)
         bandsData?.putBandMember(member: member)
+        buttonJoinBand.isHidden = true
     }
     
     func didReciveBandsData(bandsData: Any) {

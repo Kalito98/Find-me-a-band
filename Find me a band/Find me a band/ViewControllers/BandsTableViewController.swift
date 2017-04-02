@@ -17,7 +17,9 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
         super.viewDidLoad()
         bandsData = BandsData()
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "band-cell")
+        let bandsCell = UINib(nibName: "BandTableViewCell", bundle: nil)
+        self.tableView.register(bandsCell, forCellReuseIdentifier: "band-cell")
+        self.tableView.rowHeight = 70
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +44,7 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.showDetails(of: self.bands[indexPath.row])
+        self.showDetails(band: self.bands[indexPath.row])
     }
     
     func loadBands() {
@@ -53,7 +55,7 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
         bandsData?.getAll()
     }
     
-    func showDetails(of band: BandModel) {
+    func showDetails(band: BandModel) {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "bandsDetailsView") as! BandsDetailsViewController
         nextVC.band = band
         navigationController?.pushViewController(nextVC, animated: true)
@@ -71,9 +73,10 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "band-cell", for: indexPath)
-        cell.textLabel?.text = self.bands[indexPath.row].name
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "band-cell", for: indexPath) as! BandTableViewCell
+        cell.textLableBandName.text = "Genre: \(self.bands[indexPath.row].genre!)"
+        cell.textLableBandCreator.text = "Creator: \(self.bands[indexPath.row].creator!)"
+        cell.textLableBandGenre.text = self.bands[indexPath.row].name
 
         return cell
     }

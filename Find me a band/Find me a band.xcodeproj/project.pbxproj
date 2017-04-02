@@ -10,6 +10,8 @@
 		1D4DDA20491A528AAAA89FF8 /* Pods_Find_me_a_band.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DD60C138DB5AF1AE2ACD0F /* Pods_Find_me_a_band.framework */; };
 		9C51D5121E85428D002A94EC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51D5111E85428D002A94EC /* SignInViewController.swift */; };
 		9C51D5141E8542B3002A94EC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51D5131E8542B3002A94EC /* SignUpViewController.swift */; };
+		9C654A651E915638009C7B87 /* BandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C654A631E915638009C7B87 /* BandTableViewCell.swift */; };
+		9C654A661E915638009C7B87 /* BandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C654A641E915638009C7B87 /* BandTableViewCell.xib */; };
 		9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67F3F01E8414DB00342A86 /* AppDelegate.swift */; };
 		9C67F3F61E8414DB00342A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F41E8414DB00342A86 /* Main.storyboard */; };
 		9C67F3F81E8414DB00342A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F71E8414DB00342A86 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		9057F16744CF6017D76E31F6 /* Pods-Find me a band.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find me a band.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find me a band/Pods-Find me a band.release.xcconfig"; sourceTree = "<group>"; };
 		9C51D5111E85428D002A94EC /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
 		9C51D5131E8542B3002A94EC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
+		9C654A631E915638009C7B87 /* BandTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BandTableViewCell.swift; path = Views/BandTableViewCell.swift; sourceTree = "<group>"; };
+		9C654A641E915638009C7B87 /* BandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BandTableViewCell.xib; path = Views/BandTableViewCell.xib; sourceTree = "<group>"; };
 		9C67F3ED1E8414DB00342A86 /* Find me a band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find me a band.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C67F3F01E8414DB00342A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C67F3F51E8414DB00342A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,11 +91,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9C51D5151E8546DC002A94EC /* DI */ = {
+		9C654A621E915586009C7B87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9C654A631E915638009C7B87 /* BandTableViewCell.swift */,
+				9C654A641E915638009C7B87 /* BandTableViewCell.xib */,
 			);
-			name = DI;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		9C67F3E41E8414DB00342A86 = {
@@ -115,8 +121,8 @@
 		9C67F3EF1E8414DB00342A86 /* Find me a band */ = {
 			isa = PBXGroup;
 			children = (
+				9C654A621E915586009C7B87 /* Views */,
 				9C9F8B8E1E89982800BB5993 /* Enums */,
-				9C51D5151E8546DC002A94EC /* DI */,
 				9C992A021E84385E00342D2B /* Providers */,
 				9C992A011E84385200342D2B /* Data */,
 				9C992A001E84382D00342D2B /* Utils */,
@@ -281,6 +287,7 @@
 			files = (
 				9C67F3FB1E8414DB00342A86 /* LaunchScreen.storyboard in Resources */,
 				9C67F3F81E8414DB00342A86 /* Assets.xcassets in Resources */,
+				9C654A661E915638009C7B87 /* BandTableViewCell.xib in Resources */,
 				9C67F3F61E8414DB00342A86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +359,7 @@
 				9C7BDF231E86BF65004421A2 /* TabBarViewController.swift in Sources */,
 				9C95961F1E8E6328004EC58B /* BandsData.swift in Sources */,
 				9CF1507E1E8D53C100DD69CC /* UserFactory.swift in Sources */,
+				9C654A651E915638009C7B87 /* BandTableViewCell.swift in Sources */,
 				9C67F3F11E8414DB00342A86 /* AppDelegate.swift in Sources */,
 				9C95961D1E8E5061004EC58B /* UsersDataDelegate.swift in Sources */,
 				9C98F5471E911542008D22EC /* BandsDetailsViewController.swift in Sources */,
