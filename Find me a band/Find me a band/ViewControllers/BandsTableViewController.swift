@@ -15,12 +15,12 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bandsData = BandsData()
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "band-cell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        bandsData = BandsData()
         self.loadBands()
     }
 
@@ -43,21 +43,18 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
     
     func loadBands() {
         self.bandsData?.delegate = self
-        //DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
-        //    SwiftSpinner.show("Loading Bands")
-        //}
-        //bandsData?.getAll()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
+            //SwiftSpinner.show("Loading Bands")
+        }
+        bandsData?.getAll()
     }
     
-    func didReciveBandsData(data: Any) {
-        let dataArray = data as! [Dictionary<String, Any>]
+    func didReciveBandsData(bandsData: Any) {
+        let dataArray = bandsData as! [Dictionary<String, Any>]
         self.bands = [BandModel].from(jsonArray: dataArray)!
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(3500)) {
-            SwiftSpinner.hide()
         }
         SwiftSpinner.hide()
     }

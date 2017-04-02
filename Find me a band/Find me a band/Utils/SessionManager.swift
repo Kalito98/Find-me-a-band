@@ -27,6 +27,10 @@ class SessionManager {
         userDefaults.removeObject(forKey: "role")
     }
     
+    func getUsername() -> String {
+        return userDefaults.value(forKey: "username") as! String
+    }
+    
     func isLogged() -> Bool {
         if self.userDefaults.value(forKey: "username") == nil {
             return false

@@ -16,6 +16,8 @@ struct BandModel: Decodable {
     let email: String?
     let phone: String?
     let bandMembers: Array<String>?
+    let creator: String?
+    let genre: String?
     
     init?(json: JSON) {
         self.bandId = "_id" <~~ json
@@ -23,6 +25,8 @@ struct BandModel: Decodable {
         self.email = "contactEmail" <~~ json
         self.phone = "contactPhone" <~~ json
         self.bandMembers = "bandMembers" <~~ json
+        self.creator = "creator" <~~ json
+        self.genre = "genre" <~~ json
     }
     
     func toJSON() -> JSON? {
@@ -32,6 +36,8 @@ struct BandModel: Decodable {
             "contactEmail" ~~> self.email,
             "contactPhone" ~~> self.phone,
             "bandMembers" ~~> self.bandMembers,
+            "creator" ~~> self.creator,
+            "genere" ~~> self.genre
             ])
     }
     

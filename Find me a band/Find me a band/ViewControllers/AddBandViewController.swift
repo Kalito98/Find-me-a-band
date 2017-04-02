@@ -14,6 +14,7 @@ class AddBandViewController: UIViewController, HttpRequesterDelegate {
     @IBOutlet weak var textFieldBandName: UITextField!
     @IBOutlet weak var textFieldBandEmail: UITextField!
     @IBOutlet weak var textFieldBandPhone: UITextField!
+    @IBOutlet weak var textFieldGenere: UITextField!
     
     var url: String {
         get{
@@ -28,10 +29,13 @@ class AddBandViewController: UIViewController, HttpRequesterDelegate {
         }
     }
     
+    var sessionManager: SessionManager?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        sessionManager = SessionManager()
         // Do any additional setup after loading the view.
     }
 
@@ -45,13 +49,17 @@ class AddBandViewController: UIViewController, HttpRequesterDelegate {
         let bandName = textFieldBandName.text
         let bandEmail = textFieldBandEmail.text
         let bandPhone = textFieldBandPhone.text
-        
+        let genere = textFieldGenere.text
+        let bandCreator = sessionManager?.getUsername()
+        print(bandCreator!)
         
         let bandJson = [
             "name": bandName!,
             "contactPhone": bandPhone!,
             "contactEmail": bandEmail!,
-            "bandMembers": []
+            "bandMembers": [],
+            "creator": bandCreator! as String,
+            "genre": genere!
         ] as [String : Any]
         
         self.http?.delegate = self

@@ -30,8 +30,17 @@ class BandsData: HttpRequesterDelegate {
         self.http?.get(fromUrl: "http://192.168.1.249:8080/band/getall")
     }
     
+    func getByUser(username: Dictionary<String, Any>) {
+        self.http?.delegate = self
+        self.http?.postJson(toUrl: "http://192.168.1.249:8080/band/getByUser", withBody: username)
+    }
+    
     func didReciveData(data: Any) {
         self.delegate?.didReciveBandsData(bandsData: data)
+    }
+    
+    func didReceiveError(error: HttpError) {
+        self.delegate?.didReceiveBandsError(error: error)
     }
     
 }

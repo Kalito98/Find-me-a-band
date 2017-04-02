@@ -7,21 +7,55 @@
 //
 
 import UIKit
+import SwiftSpinner
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BandsDataDelegate {
     var sessionManager: SessionManager?
+    var bands: [BandModel] = []
+    var bandsData: BandsData?
+    
+    @IBOutlet weak var labelBandsCreated: UILabel!
+    @IBOutlet weak var labelHello: UILabel!
+    @IBOutlet weak var bandsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bandsData = BandsData()
         sessionManager = SessionManager()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        self.bandsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "band-cell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.loadBands()
+        self.loadProfile()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be	 recreated.
+    }
+    
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return self.bands.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "band-cell", for: indexPath)
+        cell.textLabel?.text = self.bands[indexPath.row].name
+        
+        return cell
+    }
+    
+
     @IBAction func signOut(_ sender: UIButton) {
         sessionManager?.removeSession()
         let storyboardName: String = "Main"
@@ -30,6 +64,35 @@ class AccountViewController: UIViewController {
         self.present(tabBarController!, animated: true, completion: nil)
     }
     
+    func loadBands() {
+        self.bandsData?.delegate = self
+        var username = Dictionary<String, Any>()
+        username["username"] = sessionManager?.getUsername()
+        SwiftSpinner.show("Loading Account")
+        bandsData?.getByUser(username: username)
+    }
+    
+    func loadProfile() {
+        let username = sessionManager?.getUsername()
+        DispatchQueue.main.async {
+            self.labelHello.text = "Hello, \(username! as String)"
+        }
+    }
+
+    
+    func didReciveBandsData(bandsData: Any) {
+        let dataArray = bandsData as! [Dictionary<String, Any>]
+        self.bands = [BandModel].from(jsonArray: dataArray)!
+        DispatchQueue.main.async {
+            self.labelBandsCreated.text = "Bands Created: \(self.bands.count)"
+            self.bandsTableView.reloadData()
+        }
+        SwiftSpinner.hide()
+    }
+    
+    func didReceiveBandsError(error: HttpError) {
+        SwiftSpinner.hide()
+    }
 
     /*
     // MARK: - Navigation

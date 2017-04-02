@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
 
     var window: UIWindow?
-    var tabBarController: UITabBarController?
+    var tabBarController: UIViewController?
     var baseUrl: String = "http://192.168.1.249:8080/auth/register"
     var http: HttpRequester?
     var sessionManager: SessionManager?
@@ -60,14 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
     func tabBarAuthorized() {
         let storyboardName: String = "Main"
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarAuthorized") as? UITabBarController
+        tabBarController = storyboard.instantiateViewController(withIdentifier: "navigationControllerAuth")
         window?.rootViewController = tabBarController
     }
     
     func tabBarUnauthorized() {
         let storyboardName: String = "Main"
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarUnauthorized") as? UITabBarController
+        tabBarController = storyboard.instantiateViewController(withIdentifier: "navigationControllerUnauth")
         window?.rootViewController = tabBarController
     }
     
