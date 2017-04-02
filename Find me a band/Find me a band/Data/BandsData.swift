@@ -45,8 +45,13 @@ class BandsData: HttpRequesterDelegate {
         self.http?.putJson(atUrl: "\(url)/band/putBandMember", withBody: member)
     }
     
-    func didReciveData(data: Any) {
-        self.delegate?.didReciveBandsData(bandsData: data)
+    func createBand(band: Dictionary<String, Any>) {
+        self.http?.delegate = self
+        self.http?.postJson(toUrl: "\(url)/band/create", withBody: band)
+    }
+    
+    func didReceiveData(data: Any) {
+        self.delegate?.didReceiveBandsData(bandsData: data)
     }
     
     func didReceiveError(error: HttpError) {

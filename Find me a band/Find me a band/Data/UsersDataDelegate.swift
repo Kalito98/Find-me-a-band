@@ -9,7 +9,7 @@
 import Foundation
 
 protocol UsersDataDelegate {
-    func didReciveUsersData(usersData: Any)
+    func didReceiveUsersData(usersData: Any)
     func didReceiveUsersError(error: HttpError)
 }
 
@@ -21,4 +21,5 @@ extension UsersDataDelegate {
     func didReceiveUsersError(error: HttpError) {
         
     }
+    
 }

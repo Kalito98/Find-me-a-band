@@ -9,13 +9,13 @@
 import Foundation
 
 protocol HttpRequesterDelegate {
-    func didReciveData(data: Any)
+    func didReceiveData(data: Any)
     func didReceiveError(error: HttpError)
     func didDeleteData()
 }
 
 extension HttpRequesterDelegate {
-    func didReciveData(data: Any) {
+    func didReceiveData(data: Any) {
         
     }
     

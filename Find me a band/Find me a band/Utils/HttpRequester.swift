@@ -83,7 +83,7 @@ class HttpRequester {
                     case .delete:
                         weakSelf?.delegate?.didDeleteData()
                     default:
-                        weakSelf?.delegate?.didReciveData(data: body)
+                        weakSelf?.delegate?.didReceiveData(data: body)
                     }
                 }
                 catch {

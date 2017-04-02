@@ -39,8 +39,12 @@ class UsersData: HttpRequesterDelegate {
         
     }
     
-    func didReciveData(data: Any) {
-        self.delegate?.didReciveUsersData(usersData: data)
+    func didReceiveData(data: Any) {
+        self.delegate?.didReceiveUsersData(usersData: data)
+    }
+    
+    func didReceiveError(error: HttpError) {
+        self.delegate?.didReceiveUsersError(error: error)
     }
     
 }

@@ -17,7 +17,6 @@
 		9C67F3F81E8414DB00342A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F71E8414DB00342A86 /* Assets.xcassets */; };
 		9C67F3FB1E8414DB00342A86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C67F3F91E8414DB00342A86 /* LaunchScreen.storyboard */; };
 		9C73FEAB1E86B02400A2ED2B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73FEAA1E86B02400A2ED2B /* AccountViewController.swift */; };
-		9C7BDF231E86BF65004421A2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7BDF221E86BF65004421A2 /* TabBarViewController.swift */; };
 		9C7BDF251E86E0B7004421A2 /* AddBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7BDF241E86E0B7004421A2 /* AddBandViewController.swift */; };
 		9C95961A1E8E4F40004EC58B /* UsersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9596191E8E4F40004EC58B /* UsersData.swift */; };
 		9C95961D1E8E5061004EC58B /* UsersDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C95961C1E8E5061004EC58B /* UsersDataDelegate.swift */; };
@@ -51,7 +50,6 @@
 		9C67F3FA1E8414DB00342A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C67F3FC1E8414DB00342A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C73FEAA1E86B02400A2ED2B /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = ViewControllers/AccountViewController.swift; sourceTree = "<group>"; };
-		9C7BDF221E86BF65004421A2 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewControllers/TabBarViewController.swift; sourceTree = "<group>"; };
 		9C7BDF241E86E0B7004421A2 /* AddBandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBandViewController.swift; path = ViewControllers/AddBandViewController.swift; sourceTree = "<group>"; };
 		9C9596191E8E4F40004EC58B /* UsersData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersData.swift; path = Data/UsersData.swift; sourceTree = "<group>"; };
 		9C95961C1E8E5061004EC58B /* UsersDataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersDataDelegate.swift; path = Data/UsersDataDelegate.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				9C51D5111E85428D002A94EC /* SignInViewController.swift */,
 				9C51D5131E8542B3002A94EC /* SignUpViewController.swift */,
 				9C73FEAA1E86B02400A2ED2B /* AccountViewController.swift */,
-				9C7BDF221E86BF65004421A2 /* TabBarViewController.swift */,
 				9C7BDF241E86E0B7004421A2 /* AddBandViewController.swift */,
 				9C98F5461E911542008D22EC /* BandsDetailsViewController.swift */,
 			);
@@ -356,7 +353,6 @@
 				9CA0F7B71E8A9E9A00141795 /* HttpError.swift in Sources */,
 				9C7BDF251E86E0B7004421A2 /* AddBandViewController.swift in Sources */,
 				9C992A041E8438E300342D2B /* HttpRequester.swift in Sources */,
-				9C7BDF231E86BF65004421A2 /* TabBarViewController.swift in Sources */,
 				9C95961F1E8E6328004EC58B /* BandsData.swift in Sources */,
 				9CF1507E1E8D53C100DD69CC /* UserFactory.swift in Sources */,
 				9C654A651E915638009C7B87 /* BandTableViewCell.swift in Sources */,

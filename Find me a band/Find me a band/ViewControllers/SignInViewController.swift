@@ -23,13 +23,10 @@ class SignInViewController: UIViewController, UsersDataDelegate {
         userFactory = UserFactory()
         usersData = UsersData()
         sessionManager = SessionManager()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -44,7 +41,7 @@ class SignInViewController: UIViewController, UsersDataDelegate {
         usersData?.login(user: userJson!)
     }
     
-    func didReciveUsersData(usersData: Any) {
+    func didReceiveUsersData(usersData: Any) {
         let userData = usersData as! Dictionary<String, Any>
         let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
         sessionManager?.setSession(withUsername: (user?.username)!, withId: (user?.userId)!, andRole: (user?.role)!)
@@ -56,17 +53,10 @@ class SignInViewController: UIViewController, UsersDataDelegate {
         DispatchQueue.main.async{
             self.present(tabBarController!, animated: true, completion: nil)
         }
-
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func didReceiveUsersError(error: HttpError) {
+        SwiftSpinner.hide()
     }
-    */
 
 }

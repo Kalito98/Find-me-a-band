@@ -9,13 +9,13 @@
 import Foundation
 
 protocol BandsDataDelegate {
-    func didReciveBandsData(bandsData: Any)
+    func didReceiveBandsData(bandsData: Any)
     func didReceiveBandsError(error: HttpError)
     func didDeleteBands()
 }
 
 extension BandsDataDelegate {
-    func didReciveBandsData(bandsData: Any) {
+    func didReceiveBandsData(bandsData: Any) {
         
     }
     

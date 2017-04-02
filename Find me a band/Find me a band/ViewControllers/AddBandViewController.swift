@@ -9,7 +9,7 @@
 import UIKit
 import SwiftSpinner
 
-class AddBandViewController: UIViewController, HttpRequesterDelegate {
+class AddBandViewController: UIViewController, BandsDataDelegate {
 
     @IBOutlet weak var textFieldBandName: UITextField!
     @IBOutlet weak var textFieldBandEmail: UITextField!
@@ -22,26 +22,20 @@ class AddBandViewController: UIViewController, HttpRequesterDelegate {
             return "\(appDelegate.baseUrl)"
         }
     }
-    var http: HttpRequester? {
-        get{
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return appDelegate.http
-        }
-    }
     
     var sessionManager: SessionManager?
+    var bandsData: BandsData?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         sessionManager = SessionManager()
-        // Do any additional setup after loading the view.
+        bandsData = BandsData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func createBand(_ sender: UIButton) {
@@ -62,26 +56,19 @@ class AddBandViewController: UIViewController, HttpRequesterDelegate {
             "genre": genere!
         ] as [String : Any]
         
-        self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.1.249:8080/band/create", withBody: bandJson)
+        self.bandsData?.delegate = self
+        self.bandsData?.createBand(band: bandJson)
     }
     
-    func didReciveData(data: Any) {
+    func didReceiveBandsData(bandsData: Any) {
         //let bandData = data as! Dictionary<String, Any>
         //let band = BandModel(json: bandData.values.first as! Dictionary<String, Any>)
         SwiftSpinner.hide()
     }
-
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func didReceiveBandsError(error: HttpError) {
+        SwiftSpinner.hide()
     }
-    */
-
+    
+    
 }
