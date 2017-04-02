@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftSpinner
+import Toaster
 
 class SignUpViewController: UIViewController, UsersDataDelegate {
     
@@ -45,14 +46,24 @@ class SignUpViewController: UIViewController, UsersDataDelegate {
         usersData?.register(user: userJson!)
     }
     
+    func clearTextFields() {
+        DispatchQueue.main.async {
+            self.textFieldUserName.text = ""
+            self.textFieldEmail.text = ""
+            self.textFieldPass.text = ""
+            self.textFieldRole.text = ""
+        }
+    }
+    
     func didReceiveUsersData(usersData: Any) {
-        let userData = usersData as! Dictionary<String, Any>
-        let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
         SwiftSpinner.hide()
+        clearTextFields()
+        Toast(text: "Successfully signed up", duration: Delay.short).show()
     }
     
     func didReceiveUsersError(error: HttpError) {
         SwiftSpinner.hide()
+        Toast(text: "Error signing up", duration: Delay.short).show()
     }
 
 

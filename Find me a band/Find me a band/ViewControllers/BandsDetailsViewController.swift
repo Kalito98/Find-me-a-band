@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import SwiftSpinner
+import Toaster
 
 class BandsDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BandsDataDelegate {
 
@@ -104,6 +105,7 @@ class BandsDetailsViewController: UIViewController, UITableViewDelegate, UITable
         SwiftSpinner.show("Joining Band")
         bandMembers?.append(username!)
         bandsData?.putBandMember(member: member)
+        Toast(text: "Successfully joined band", duration: Delay.short).show()
         buttonJoinBand.isHidden = true
     }
     

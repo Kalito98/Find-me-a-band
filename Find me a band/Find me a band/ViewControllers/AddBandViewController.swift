@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftSpinner
+import Toaster
 
 class AddBandViewController: UIViewController, BandsDataDelegate {
 
@@ -60,14 +61,25 @@ class AddBandViewController: UIViewController, BandsDataDelegate {
         self.bandsData?.createBand(band: bandJson)
     }
     
+    func clearTextFields() {
+        DispatchQueue.main.async {
+            self.textFieldBandName.text = ""
+            self .textFieldBandEmail.text = ""
+            self.textFieldBandPhone.text = ""
+            self.textFieldGenere.text = ""
+        }
+
+    }
+    
     func didReceiveBandsData(bandsData: Any) {
-        //let bandData = data as! Dictionary<String, Any>
-        //let band = BandModel(json: bandData.values.first as! Dictionary<String, Any>)
+        clearTextFields()
         SwiftSpinner.hide()
+        Toast(text: "Successfully created band", duration: Delay.short).show()
     }
     
     func didReceiveBandsError(error: HttpError) {
         SwiftSpinner.hide()
+        Toast(text: "Error creating band", duration: Delay.short).show()
     }
     
     

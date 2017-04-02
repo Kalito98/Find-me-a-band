@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftSpinner
+import Toaster
 
 class AccountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BandsDataDelegate {
     var sessionManager: SessionManager?
@@ -123,6 +124,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     func didDeleteBands() {
         self.loadBands()
         SwiftSpinner.hide()
+        Toast(text: "Successfully deleted band", duration: Delay.short).show()
     }
 
 }

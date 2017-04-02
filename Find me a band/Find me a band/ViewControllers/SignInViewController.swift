@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftSpinner
+import Toaster
 
 class SignInViewController: UIViewController, UsersDataDelegate {
     
@@ -46,6 +47,7 @@ class SignInViewController: UIViewController, UsersDataDelegate {
         let user = UserModel(json: userData.values.first as! Dictionary<String, Any>)
         sessionManager?.setSession(withUsername: (user?.username)!, withId: (user?.userId)!, andRole: (user?.role)!)
         SwiftSpinner.hide()
+        Toast(text: "Successfully signed in", duration: Delay.short).show()
         
         let storyboardName: String = "Main"
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
@@ -57,6 +59,7 @@ class SignInViewController: UIViewController, UsersDataDelegate {
     
     func didReceiveUsersError(error: HttpError) {
         SwiftSpinner.hide()
+        Toast(text: "Error signing in", duration: Delay.short).show()
     }
 
 }
