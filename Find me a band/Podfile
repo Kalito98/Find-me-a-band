@@ -7,8 +7,6 @@ target 'Find me a band' do
   use_frameworks!
 
   # Pods for Find me a band
-  pod 'Swinject', '~> 2.0.0'
-  pod 'SwinjectStoryboard', '~> 1.0.0'
   pod 'Gloss', '~> 1.2'
   pod 'SwiftSpinner'
   pod 'Toaster', '~> 2.0'
