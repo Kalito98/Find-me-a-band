@@ -50,7 +50,7 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
     func loadBands() {
         self.bandsData?.delegate = self
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
-            //SwiftSpinner.show("Loading Bands")
+            SwiftSpinner.show("Loading Bands")
         }
         bandsData?.getAll()
     }

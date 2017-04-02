@@ -27,12 +27,12 @@ class UsersData: HttpRequesterDelegate {
     
     func login(user: Dictionary<String, Any>) {
         self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/login", withBody: user)
+        self.http?.postJson(toUrl: "\(url)/auth/login", withBody: user)
     }
     
     func register(user: Dictionary<String, Any>) {
         self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.1.249:8080/auth/register", withBody: user)
+        self.http?.postJson(toUrl: "\(url)/auth/register", withBody: user)
     }
     
     func logout(user: Dictionary<String, Any>) {

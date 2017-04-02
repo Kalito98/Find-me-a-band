@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HttpRequesterDelegate {
 
     var window: UIWindow?
     var tabBarController: UIViewController?
-    var baseUrl: String = "http://192.168.1.249:8080/auth/register"
+    var baseUrl: String = "https://find-me-a-band.herokuapp.com"
     var http: HttpRequester?
     var sessionManager: SessionManager?
 

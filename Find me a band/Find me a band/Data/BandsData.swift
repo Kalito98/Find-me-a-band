@@ -27,22 +27,22 @@ class BandsData: HttpRequesterDelegate {
     
     func getAll() {
         self.http?.delegate = self
-        self.http?.get(fromUrl: "http://192.168.1.249:8080/band/getall")
+        self.http?.get(fromUrl: "\(url)/band/getall")
     }
     
     func getByUser(username: Dictionary<String, Any>) {
         self.http?.delegate = self
-        self.http?.postJson(toUrl: "http://192.168.1.249:8080/band/getByUser", withBody: username)
+        self.http?.postJson(toUrl: "\(url)/band/getByUser", withBody: username)
     }
     
     func deleteBand(band: Dictionary<String, Any>) {
         self.http?.delegate = self
-        self.http?.deleteJson(atUrl: "http://192.168.1.249:8080/band/delete", withBody: band)
+        self.http?.deleteJson(atUrl: "\(url)/band/delete", withBody: band)
     }
     
     func putBandMember(member: Dictionary<String, Any>) {
         self.http?.delegate = self
-        self.http?.putJson(atUrl: "http://192.168.1.249:8080/band/putBandMember", withBody: member)
+        self.http?.putJson(atUrl: "\(url)/band/putBandMember", withBody: member)
     }
     
     func didReciveData(data: Any) {
