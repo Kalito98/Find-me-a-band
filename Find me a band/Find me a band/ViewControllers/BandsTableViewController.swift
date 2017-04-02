@@ -73,9 +73,10 @@ class BandsTableViewController: UITableViewController, UITabBarDelegate, BandsDa
     func didReceiveBandsData(bandsData: Any) {
         let dataArray = bandsData as! [Dictionary<String, Any>]
         self.bands = [BandModel].from(jsonArray: dataArray)!
+        weak var weakSelf = self
         
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            weakSelf?.tableView.reloadData()
         }
         SwiftSpinner.hide()
     }

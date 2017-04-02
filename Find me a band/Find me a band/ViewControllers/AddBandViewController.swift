@@ -62,11 +62,12 @@ class AddBandViewController: UIViewController, BandsDataDelegate {
     }
     
     func clearTextFields() {
+        weak var weakSelf = self
         DispatchQueue.main.async {
-            self.textFieldBandName.text = ""
-            self .textFieldBandEmail.text = ""
-            self.textFieldBandPhone.text = ""
-            self.textFieldGenere.text = ""
+            weakSelf?.textFieldBandName.text = ""
+            weakSelf?.textFieldBandEmail.text = ""
+            weakSelf?.textFieldBandPhone.text = ""
+            weakSelf?.textFieldGenere.text = ""
         }
 
     }

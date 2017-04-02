@@ -94,8 +94,9 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func loadProfile() {
         let username = sessionManager?.getUsername()
+        weak var weakSelf = self
         DispatchQueue.main.async {
-            self.labelHello.text = "Hello, \(username! as String)"
+            weakSelf?.labelHello.text = "Hello, \(username! as String)"
         }
     }
     
@@ -110,9 +111,10 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     func didReceiveBandsData(bandsData: Any) {
         let dataArray = bandsData as! [Dictionary<String, Any>]
         self.bands = [BandModel].from(jsonArray: dataArray)!
+        weak var weakSelf = self
         DispatchQueue.main.async {
-            self.labelBandsCreated.text = "Bands Created: \(self.bands.count)"
-            self.bandsTableView.reloadData()
+            weakSelf?.labelBandsCreated.text = "Bands Created: \(self.bands.count)"
+            weakSelf?.bandsTableView.reloadData()
         }
         SwiftSpinner.hide()
     }

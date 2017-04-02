@@ -69,12 +69,13 @@ class BandsDetailsViewController: UIViewController, UITableViewDelegate, UITable
         let phone = band?.phone
         let genre = band?.genre
         let owner = band?.creator
+        weak var weakSelf = self
         DispatchQueue.main.async {
-            self.textLablName.text = "\(name! as String)"
-            self.textLableEmail.text = "Email: \(email! as String)"
-            self.textLablePhone.text = "Phone: \(phone! as String)"
-            self.textLableGenre.text = "Genre: \(genre! as String)"
-            self.textLableOwner.text = "Owner: \(owner! as String)"
+            weakSelf?.textLablName.text = "\(name! as String)"
+            weakSelf?.textLableEmail.text = "Email: \(email! as String)"
+            weakSelf?.textLablePhone.text = "Phone: \(phone! as String)"
+            weakSelf?.textLableGenre.text = "Genre: \(genre! as String)"
+            weakSelf?.textLableOwner.text = "Owner: \(owner! as String)"
         }
     }
     
@@ -110,8 +111,9 @@ class BandsDetailsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func didReceiveBandsData(bandsData: Any) {
+        weak var weakSelf = self
         DispatchQueue.main.async {
-            self.bandMembersTableView.reloadData()
+            weakSelf?.bandMembersTableView.reloadData()
         }
         SwiftSpinner.hide()
     }
